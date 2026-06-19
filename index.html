@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elena Riazanova | AI Marketing Atelier</title>
+<meta name="description" content="AI-assisted creative direction and content strategy for fashion and lifestyle brands." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..900,0..1&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+<style>
+:root {
+  --bg: #ECF5FF;
+  --navy: #1A4373;
+  --steel: #5384B8;
+  --ink: #0F1419;
+  --paper: #F8FBFF;
+  --soft: #DCEBFA;
+  --red: #D962A7;
+  --blue: #5384B8;
+  --muted: #5C6978;
+  --line: rgba(15,20,25,.13);
+  --silver: #B9C6D2;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); scroll-behavior: auto; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Fraunces";
+  font-variation-settings: "opsz" 14, "wght" 430;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(15,20,25,.022) 1px, transparent 0) 0 0/7px 7px,
+    radial-gradient(circle at 86% 18%, rgba(217,98,167,.1), transparent 28vw),
+    radial-gradient(circle at 0 72%, rgba(83,132,184,.13), transparent 30vw),
+    var(--bg);
+  overflow-x: hidden;
+}
+body:before {
+  display: none;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+.display { font-variation-settings: "opsz" 144, "wght" 525; letter-spacing: 0; }
+.accent { font-style: italic; font-variation-settings: "opsz" 144, "wght" 430; }
+.meta { font-variation-settings: "opsz" 9, "wght" 650; text-transform: uppercase; letter-spacing: .15em; }
+.red { color: var(--red); }
+.blue { color: var(--blue); }
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px clamp(18px,4vw,52px);
+  color: var(--bg);
+  mix-blend-mode: difference;
+}
+.nav-links { display: flex; gap: clamp(16px,2.2vw,32px); font-size: 14px; }
+.magnetic { display: inline-block; will-change: transform; transition: transform .24s cubic-bezier(.2,.8,.2,1); }
+.section {
+  position: relative;
+  padding: clamp(92px,12vw,164px) clamp(18px,4vw,52px);
+}
+.inner { max-width: 1440px; margin: 0 auto; }
+.section-label { color: var(--muted); margin-bottom: 20px; }
+.h2 {
+  font-size: clamp(58px,10vw,150px);
+  line-height: .86;
+  margin: 0;
+}
+.copy {
+  font-size: clamp(17px,1.22vw,21px);
+  line-height: 1.55;
+  color: #2B3642;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px 9px;
+  border: 1px solid rgba(15,20,25,.34);
+  border-radius: 999px;
+  background: rgba(248,251,255,.66);
+  backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.82);
+  font-size: 12px;
+}
+.pill:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 7px rgba(217,98,167,.09);
+}
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: clamp(84px,8vw,116px) clamp(18px,4vw,52px) 52px;
+  color: var(--navy);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(26,67,115,.024) 1px, transparent 0) 0 0/7px 7px,
+    radial-gradient(circle at 83% 18%, rgba(83,132,184,.16), transparent 28vw),
+    var(--bg);
+  overflow: hidden;
+}
+.hero-main {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(190px,320px);
+  align-items: center;
+  gap: clamp(28px,5vw,88px);
+  perspective: 1500px;
+}
+.hero-copy { align-self: center; padding-bottom: 0; }
+.hero-name {
+  color: var(--navy);
+  font-size: clamp(82px,14.4vw,238px);
+  line-height: .82;
+  margin: 0 0 clamp(18px,2vw,28px);
+  will-change: transform;
+}
+.hero-surname { color: var(--navy); }
+.hero-position {
+  max-width: 780px;
+  color: rgba(26,67,115,.86);
+  font-size: clamp(23px,2.35vw,39px);
+  line-height: 1.08;
+  font-variation-settings: "opsz" 72, "wght" 420;
+}
+.hero-visual {
+  position: relative;
+  justify-self: end;
+  align-self: center;
+  width: clamp(190px,23vw,300px);
+  height: clamp(420px,72vh,560px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: visible;
+  pointer-events: none;
+}
+.hero-product-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  mix-blend-mode: normal;
+  filter: saturate(.92) contrast(1.02);
+  background: transparent;
+}
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(248,251,255,.52);
+  white-space: nowrap;
+  padding: 16px 0;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 48px;
+  animation: ticker 30s linear infinite;
+  font-size: clamp(27px,3vw,50px);
+}
+.ticker-track span { display: inline-flex; align-items: center; gap: 48px; }
+.tick-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(15,20,25,.48); }
+@keyframes ticker { to { transform: translateX(-50%); } }
+.split {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: clamp(40px,7vw,104px);
+  align-items: start;
+}
+.help-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  margin-top: 56px;
+}
+.help-item {
+  display: grid;
+  grid-template-columns: 76px 1fr .8fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.help-item h3 { margin: 0; font-size: clamp(25px,2.4vw,40px); line-height: 1.02; }
+.help-item p { margin: 0; }
+.lookbook { background: linear-gradient(180deg, rgba(236,245,255,.66), #E3EFFB); }
+.case-shell {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: minmax(360px,.92fr) minmax(0,1.08fr);
+  gap: clamp(28px,5vw,70px);
+  align-items: stretch;
+}
+.case-copy {
+  padding: clamp(24px,3vw,42px);
+  border: 1px solid rgba(15,20,25,.12);
+  background: rgba(248,251,255,.72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.82);
+}
+.case-title { font-size: clamp(44px,5.2vw,82px); line-height: .92; margin: 30px 0 24px; }
+.case-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.case-tab {
+  border: 1px solid rgba(15,20,25,.24);
+  border-radius: 999px;
+  padding: 8px 13px 9px;
+  color: var(--muted);
+  background: rgba(248,251,255,.7);
+  cursor: pointer;
+}
+.case-tab.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.case-detail {
+  margin-top: 24px;
+  min-height: 104px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.case-visual {
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(15,20,25,.12);
+  background: #111820;
+  box-shadow: 0 48px 110px -78px rgba(15,20,25,.72);
+}
+.campaign-frame {
+  position: absolute;
+  border: 1px solid rgba(236,245,255,.34);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 28px 80px -46px rgba(0,0,0,.58);
+}
+.campaign-frame.one { left: 7%; top: 9%; width: 46%; height: 72%; transform: rotate(-4deg); }
+.campaign-frame.two { right: 7%; top: 15%; width: 38%; height: 55%; transform: rotate(3deg); }
+.campaign-frame.three { right: 17%; bottom: 8%; width: 54%; height: 30%; transform: rotate(-1deg); }
+.case-visual:after {
+  content: "product / catalog / campaign system";
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  color: rgba(236,245,255,.78);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: minmax(280px,.72fr) minmax(0,1.28fr);
+  gap: clamp(34px,6vw,88px);
+  margin-top: 58px;
+  align-items: start;
+}
+.receipt {
+  position: sticky;
+  top: 110px;
+  padding: 26px;
+  border: 1px solid rgba(15,20,25,.24);
+  background: rgba(248,251,255,.78);
+  box-shadow: 0 34px 90px -66px rgba(15,20,25,.62);
+}
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid rgba(15,20,25,.12);
+  padding: 14px 0 0;
+  margin-top: 14px;
+}
+.rail {
+  position: relative;
+  border-left: 1px solid rgba(15,20,25,.22);
+  padding-left: clamp(28px,4vw,54px);
+}
+.rail-progress {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 2px;
+  height: 20%;
+  background: var(--red);
+  transform-origin: top;
+}
+.rail-step {
+  min-height: 150px;
+  padding-bottom: 32px;
+  cursor: pointer;
+}
+.rail-step h3 { font-size: clamp(30px,3vw,52px); line-height: 1; margin: 10px 0 12px; }
+.rail-step p { max-width: 610px; }
+.rail-step.active h3 { color: var(--red); }
+.packages {
+  background: linear-gradient(180deg, #E3EFFB, rgba(236,245,255,.68));
+}
+.service-menu {
+  margin-top: 54px;
+  border-top: 1px solid var(--line);
+}
+.package {
+  display: grid;
+  grid-template-columns: 120px 1fr .72fr;
+  gap: 26px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.package h3 { font-size: clamp(30px,3.4vw,58px); line-height: 1; margin: 0; }
+.package p { margin: 0; }
+.thinking {
+  background: var(--ink);
+  color: var(--bg);
+}
+.thinking .copy,
+.thinking p { color: rgba(236,245,255,.76); }
+.principles {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+  margin-top: 54px;
+}
+.principle {
+  border-top: 1px solid rgba(236,245,255,.24);
+  padding-top: 18px;
+}
+.principle h3 { font-size: clamp(25px,2.4vw,38px); line-height: 1.06; margin: 14px 0; }
+.appointment-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 440px;
+  gap: clamp(36px,6vw,92px);
+  align-items: center;
+}
+.contact-heading {
+  font-size: clamp(64px,9vw,138px);
+  line-height: .86;
+  margin: 0 0 34px;
+}
+.contact-email {
+  display: block;
+  font-size: clamp(36px,4.7vw,72px);
+  line-height: .96;
+  overflow-wrap: anywhere;
+}
+.contact-email:after {
+  content: " \2192";
+  white-space: nowrap;
+}
+.slip {
+  padding: 30px;
+  border: 1px solid rgba(15,20,25,.24);
+  background: rgba(248,251,255,.68);
+  box-shadow: 0 34px 86px -66px rgba(15,20,25,.62);
+}
+.slip-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid rgba(15,20,25,.12);
+  margin-top: 18px;
+  padding-top: 16px;
+}
+@media (max-width: 980px) {
+  .nav-links { display: none; }
+  .hero-main,
+  .split,
+  .case-shell,
+  .process-grid,
+  .appointment-grid { grid-template-columns: 1fr; }
+  .hero-main { gap: clamp(16px,4vw,28px); }
+  .hero-visual { width: clamp(170px,40vw,240px); height: 360px; justify-self: end; margin-top: -18px; }
+  .help-item,
+  .package { grid-template-columns: 1fr; gap: 12px; }
+  .receipt { position: relative; top: 0; }
+  .principles { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding-top: 88px; }
+  .hero-name,
+  .h2,
+  .contact-heading { font-size: clamp(58px,18vw,88px); }
+  .hero-position { font-size: clamp(19px,6vw,27px); }
+  .hero-visual { width: min(48vw,190px); height: 310px; margin-top: -10px; }
+  .case-visual { min-height: 420px; }
+  .principles { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="magnetic accent text-3xl" href="#arrival">elena r.</a>
+  <nav class="nav-links">
+    <a class="magnetic" href="#help">directions</a>
+    <a class="magnetic" href="#work">lookbook</a>
+    <a class="magnetic" href="#process">method</a>
+    <a class="magnetic" href="#packages">menu</a>
+    <a class="magnetic" href="#appointment">appointment</a>
+  </nav>
+  <a class="magnetic" href="#appointment">say hi -></a>
+</header>
+
+<main>
+  <section id="arrival" class="hero">
+    <div class="hero-main">
+      <div class="hero-copy">
+        <h1 class="hero-name display" id="heroName">Elena<br><span class="hero-surname">Riazanova</span></h1>
+        <p class="hero-position">AI-assisted creative direction & content strategy for fashion and lifestyle brands.</p>
+      </div>
+      <div class="hero-visual" aria-label="AI product object animation">
+        <video class="hero-product-video" autoplay muted playsinline preload="auto">
+          <source src="assets/hero-product-slot-transparent.webm" type="video/webm" />
+          <img src="assets/hero-product-slot-transparent.gif" alt="" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="portfolio focus areas">
+    <div class="ticker-track accent">
+      <span>product insertion <i class="tick-dot"></i> catalog images <i class="tick-dot"></i> campaign shoots <i class="tick-dot"></i> social templates <i class="tick-dot"></i> AI video <i class="tick-dot"></i> creative experiments <i class="tick-dot"></i></span>
+      <span aria-hidden="true">product insertion <i class="tick-dot"></i> catalog images <i class="tick-dot"></i> campaign shoots <i class="tick-dot"></i> social templates <i class="tick-dot"></i> AI video <i class="tick-dot"></i> creative experiments <i class="tick-dot"></i></span>
+    </div>
+  </div>
+
+  <section id="help" class="section">
+    <div class="inner">
+      <div class="split">
+        <div>
+          <div class="section-label meta">01 / work directions</div>
+          <h2 class="h2 display">what I make with <span class="red">AI</span></h2>
+        </div>
+        <p class="copy">The portfolio is organized around real visual outputs: products placed into scenes, catalog systems, campaigns, social content, motion, and open creative work.</p>
+      </div>
+      <div class="help-list">
+        <div class="help-item"><span class="meta text-slate-500">01</span><h3 class="accent">Real Product Insertion</h3><p class="copy">Clothing, jewelry, beauty, furniture, and other objects placed into AI scenes with attention to shape, material, scale, and brand mood.</p></div>
+        <div class="help-item"><span class="meta text-slate-500">02</span><h3 class="accent">Catalog & Product Cards</h3><p class="copy">Clean product images, marketplace visuals, website cards, PDP-style frames, and catalog-style shoots.</p></div>
+        <div class="help-item"><span class="meta text-slate-500">03</span><h3 class="accent">Fashion & Beauty Campaigns</h3><p class="copy">Full campaign worlds for launches, collections, outdoor advertising, digital ads, and editorial-style shoots.</p></div>
+        <div class="help-item"><span class="meta text-slate-500">04</span><h3 class="accent">Social Content & UGC Style</h3><p class="copy">Carousels, story templates, UGC-style concepts, Reels/TikTok directions, and content sets that can live on brand channels.</p></div>
+        <div class="help-item"><span class="meta text-slate-500">05</span><h3 class="accent">AI Video & Motion</h3><p class="copy">Image animation, moving product assets, short ad films, motion tests, and video-first campaign content.</p></div>
+        <div class="help-item"><span class="meta text-slate-500">06</span><h3 class="accent">Creative Work Without Briefs</h3><p class="copy">Free experiments where my taste, references, styling ideas, and personal visual point of view are easiest to see.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section lookbook">
+    <div class="inner">
+      <div class="split">
+        <div>
+          <div class="section-label meta">02 / selected work</div>
+          <h2 class="h2 display">the <span class="red">work menu</span></h2>
+        </div>
+        <p class="copy">Each work type should show both control and taste: the product stays recognizable, while the image feels campaign-ready.</p>
+      </div>
+      <div class="case-shell">
+        <article class="case-copy">
+          <div class="pill">portfolio system</div>
+          <h3 class="case-title display">From Product to Campaign</h3>
+          <p class="copy">The strongest direction is to show one core skill across formats: taking a real item or brand idea and building the visual world around it.</p>
+          <div class="case-tabs" role="tablist">
+            <button class="case-tab active" data-case="product">Product</button>
+            <button class="case-tab" data-case="catalog">Catalog</button>
+            <button class="case-tab" data-case="campaign">Campaign</button>
+            <button class="case-tab" data-case="social">Social</button>
+            <button class="case-tab" data-case="video">Video</button>
+            <button class="case-tab" data-case="free">Free Work</button>
+          </div>
+          <div class="case-detail" id="caseDetail">
+            <div class="meta text-slate-500 mb-2">product</div>
+            <p class="copy">Show that I can transfer a real product into a new image while keeping the important details believable.</p>
+          </div>
+        </article>
+        <div class="case-visual" aria-label="product to campaign AI visual system">
+          <div class="campaign-frame one" id="frameOne"></div>
+          <div class="campaign-frame two" id="frameTwo"></div>
+          <div class="campaign-frame three" id="frameThree"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="inner">
+      <div class="split">
+        <div>
+          <div class="section-label meta">03 / atelier method</div>
+          <h2 class="h2 display">from product to <span class="red">world</span></h2>
+        </div>
+        <p class="copy">A simple sequence for controlled AI production: read the object, define the mood, generate options, edit hard, and turn the result into usable formats.</p>
+      </div>
+      <div class="process-grid">
+        <aside class="receipt" id="receipt">
+          <div class="meta text-slate-500">atelier receipt</div>
+          <h3 class="accent text-4xl mt-5 mb-6">Product Read</h3>
+          <p class="copy">Study the product, material, proportions, brand codes, and the details that cannot get lost.</p>
+          <div class="receipt-row"><span class="meta text-slate-500">current line</span><span class="accent">01 / 05</span></div>
+          <div class="receipt-row"><span class="meta text-slate-500">goal</span><span class="accent">recognizable product</span></div>
+        </aside>
+        <div class="rail">
+          <div class="rail-progress" id="railProgress"></div>
+          <div class="rail-step active" data-title="Product Read" data-index="01 / 05" data-goal="recognizable product" data-copy="Study the product, material, proportions, brand codes, and the details that cannot get lost."><span class="meta text-slate-500">01</span><h3 class="accent">Product Read</h3><p class="copy">Start with the object, not the effect.</p></div>
+          <div class="rail-step" data-title="Visual World" data-index="02 / 05" data-goal="clear atmosphere" data-copy="Choose the setting, light, styling, references, palette, and campaign mood around the product."><span class="meta text-slate-500">02</span><h3 class="accent">Visual World</h3><p class="copy">Build a scene that supports the product instead of swallowing it.</p></div>
+          <div class="rail-step" data-title="AI Production" data-index="03 / 05" data-goal="controlled options" data-copy="Generate product scenes, catalog frames, campaign variations, and social-first formats."><span class="meta text-slate-500">03</span><h3 class="accent">AI Production</h3><p class="copy">Create options with a clear use case for each image.</p></div>
+          <div class="rail-step" data-title="Retouch & Edit" data-index="04 / 05" data-goal="taste filter" data-copy="Check product accuracy, remove AI artifacts, refine composition, and select only the strongest frames."><span class="meta text-slate-500">04</span><h3 class="accent">Retouch & Edit</h3><p class="copy">The edit is where AI output becomes portfolio work.</p></div>
+          <div class="rail-step" data-title="Rollout System" data-index="05 / 05" data-goal="usable assets" data-copy="Turn the direction into website images, marketplace cards, social posts, motion ideas, and campaign formats."><span class="meta text-slate-500">05</span><h3 class="accent">Rollout System</h3><p class="copy">Make the image direction usable across channels.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="section packages">
+    <div class="inner">
+      <div class="split">
+        <div>
+          <div class="section-label meta">04 / service menu</div>
+          <h2 class="h2 display">ways to <span class="red">work</span></h2>
+        </div>
+        <p class="copy">A simple menu for how the portfolio can be read: product accuracy, selling images, campaign atmosphere, social formats, and motion.</p>
+      </div>
+      <div class="service-menu">
+        <div class="package"><span class="meta text-slate-500">product</span><h3 class="accent">Product Transfer Test</h3><p class="copy">A focused proof that a real item can move into AI scenes without losing identity.</p></div>
+        <div class="package"><span class="meta text-slate-500">catalog</span><h3 class="accent">Catalog Image Set</h3><p class="copy">Product cards, website visuals, marketplace images, and clean catalog-style frames.</p></div>
+        <div class="package"><span class="meta text-slate-500">campaign</span><h3 class="accent">Fashion / Beauty Campaign</h3><p class="copy">Campaign concept, art direction, AI shoot, launch visuals, outdoor and digital ad formats.</p></div>
+        <div class="package"><span class="meta text-slate-500">social</span><h3 class="accent">Social Content Kit</h3><p class="copy">UGC-style ideas, carousels, story templates, short-form concepts, and channel-ready visuals.</p></div>
+        <div class="package"><span class="meta text-slate-500">motion</span><h3 class="accent">AI Video / Motion</h3><p class="copy">Image animation, product movement, short ads, and motion tests for campaign assets.</p></div>
+        <div class="package"><span class="meta text-slate-500">free</span><h3 class="accent">Creative Lab</h3><p class="copy">Unbriefed visual experiments that show taste, references, styling, and personal ideas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="thinking" class="section thinking">
+    <div class="inner">
+      <div class="split">
+        <div>
+          <div class="section-label meta text-slate-400">05 / philosophy</div>
+          <h2 class="h2 display">how I <span class="red">think</span></h2>
+        </div>
+        <p class="copy">The portfolio should prove control first, then taste. A beautiful image is not enough if the product, format, or brand use case disappears.</p>
+      </div>
+      <div class="principles">
+        <div class="principle"><span class="meta text-slate-400">01</span><h3 class="accent">Product accuracy first</h3><p>The item has to stay readable: shape, scale, texture, and details matter.</p></div>
+        <div class="principle"><span class="meta text-slate-400">02</span><h3 class="accent">AI needs direction</h3><p>I use AI with references, constraints, and editing, not random generation.</p></div>
+        <div class="principle"><span class="meta text-slate-400">03</span><h3 class="accent">Format changes the image</h3><p>A catalog card, campaign poster, story template, and video frame have different jobs.</p></div>
+        <div class="principle"><span class="meta text-slate-400">04</span><h3 class="accent">Free work shows taste</h3><p>Unbriefed experiments show my visual instincts, styling logic, and point of view.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment" class="section">
+    <div class="inner appointment-grid">
+      <div>
+        <div class="section-label meta">06 / private appointment</div>
+        <h2 class="contact-heading display">let's build the <span class="red">image system.</span></h2>
+        <a class="contact-email magnetic display" href="mailto:ruazelena@gmail.com">ruazelena@gmail.com</a>
+      </div>
+      <aside class="slip">
+        <div class="meta text-slate-500">appointment note</div>
+        <p class="copy mt-8">Have a fashion, beauty, lifestyle, or product idea that needs stronger AI visuals? I can help shape the product scene, catalog images, campaign direction, social content, or motion concept.</p>
+        <div class="slip-line"><span class="meta text-slate-500">available</span><span class="accent text-2xl">internships / freelance / collaborations</span></div>
+        <div class="slip-line"><span class="meta text-slate-500">based</span><span class="accent text-2xl">Boston / remote</span></div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const lenis = window.Lenis ? new Lenis({ lerp: .08, wheelMultiplier: .9 }) : null;
+  function raf(time) {
+    if (lenis) lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      lenis ? lenis.scrollTo(target) : target.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  document.querySelectorAll(".magnetic").forEach(el => {
+    el.addEventListener("mousemove", e => {
+      const r = el.getBoundingClientRect();
+      el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .17}px, ${(e.clientY - r.top - r.height / 2) * .2}px)`;
+    });
+    el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+  });
+
+  const hero = document.querySelector(".hero-main");
+  const heroName = document.getElementById("heroName");
+  hero.addEventListener("mousemove", e => {
+    const r = hero.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - .5;
+    const py = (e.clientY - r.top) / r.height - .5;
+    heroName.style.transform = `translate(${px * 18}px, ${py * 10}px)`;
+  });
+  hero.addEventListener("mouseleave", () => { heroName.style.transform = ""; });
+
+  const visualSvg = (bg, line, accent, label) => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${bg}"/><stop offset="1" stop-color="#F8FBFF"/></linearGradient>
+        <radialGradient id="r" cx=".34" cy=".32" r=".52"><stop stop-color="#fff" stop-opacity=".72"/><stop offset=".62" stop-color="${accent}" stop-opacity=".16"/><stop offset="1" stop-color="${bg}" stop-opacity=".04"/></radialGradient>
+      </defs>
+      <rect width="900" height="1200" fill="url(#g)"/>
+      <rect x="72" y="88" width="756" height="1024" fill="url(#r)" stroke="${line}" stroke-width="2"/>
+      <path d="M165 795 C315 560 492 535 730 710" fill="none" stroke="${accent}" stroke-width="26" stroke-linecap="round" opacity=".78"/>
+      <path d="M185 470 C300 365 520 350 707 465" fill="none" stroke="${line}" stroke-width="6" opacity=".48"/>
+      <circle cx="620" cy="315" r="118" fill="${accent}" opacity=".16"/>
+      <text x="92" y="154" fill="${line}" font-family="Fraunces" font-size="26" letter-spacing="9">${label}</text>
+      <text x="92" y="1072" fill="${line}" font-family="Fraunces" font-size="22" letter-spacing="7">PRODUCT TO CAMPAIGN SYSTEM</text>
+    </svg>`;
+    return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+  };
+  document.getElementById("frameOne").style.backgroundImage = visualSvg("#DCEBFA", "#1A4373", "#5384B8", "PRODUCT");
+  document.getElementById("frameTwo").style.backgroundImage = visualSvg("#F8FBFF", "#1A4373", "#BFA3E5", "CATALOG");
+  document.getElementById("frameThree").style.backgroundImage = visualSvg("#ECF5FF", "#1A4373", "#A1E5DA", "MOTION");
+
+  const details = {
+    product: ["product", "Show that I can transfer a real product into a new image while keeping the important details believable."],
+    catalog: ["catalog", "Create clean selling images: product cards, marketplace frames, website visuals, and catalog-style sets."],
+    campaign: ["campaign", "Build full fashion and beauty worlds for launches, collection stories, outdoor ads, and digital campaign assets."],
+    social: ["social", "Turn the direction into UGC-style ideas, carousels, story templates, Reels/TikTok angles, and content systems."],
+    video: ["video", "Animate images into short ad films, product motion, loopable campaign moments, and motion experiments."],
+    free: ["free work", "Use unbriefed work to show taste, visual references, styling logic, and a more personal creative point of view."]
+  };
+  const caseDetail = document.getElementById("caseDetail");
+  document.querySelectorAll(".case-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".case-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const d = details[tab.dataset.case];
+      caseDetail.innerHTML = `<div class="meta text-slate-500 mb-2">${d[0]}</div><p class="copy">${d[1]}</p>`;
+    });
+  });
+
+  const receipt = document.getElementById("receipt");
+  const progress = document.getElementById("railProgress");
+  document.querySelectorAll(".rail-step").forEach((step, i, arr) => {
+    step.addEventListener("mouseenter", () => setStep(step, i, arr.length));
+    step.addEventListener("click", () => setStep(step, i, arr.length));
+  });
+  function setStep(step, i, total) {
+    document.querySelectorAll(".rail-step").forEach(s => s.classList.remove("active"));
+    step.classList.add("active");
+    progress.style.height = `${((i + 1) / total) * 100}%`;
+    receipt.innerHTML = `
+      <div class="meta text-slate-500">atelier receipt</div>
+      <h3 class="accent text-4xl mt-5 mb-6">${step.dataset.title}</h3>
+      <p class="copy">${step.dataset.copy}</p>
+      <div class="receipt-row"><span class="meta text-slate-500">current line</span><span class="accent">${step.dataset.index}</span></div>
+      <div class="receipt-row"><span class="meta text-slate-500">goal</span><span class="accent">${step.dataset.goal}</span></div>`;
+  }
+
+  document.querySelectorAll(".case-copy, .case-visual, .package, .principle, .slip").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - .5;
+      const py = (e.clientY - r.top) / r.height - .5;
+      card.style.transform = `perspective(1000px) rotateX(${-py * 4.5}deg) rotateY(${px * 4.5}deg) translateY(-4px)`;
+    });
+    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+  });
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(".hero-visual", { opacity: 0, y: 26, scale: .96 }, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1.1,
+      delay: .18,
+      ease: "power3.out"
+    });
+
+    gsap.utils.toArray(".section").forEach(sec => {
+      gsap.fromTo(sec, { opacity: .2, rotationX: 12, z: -80, transformPerspective: 1600, transformOrigin: "50% 0%" }, {
+        opacity: 1, rotationX: 0, z: 0, ease: "none",
+        scrollTrigger: { trigger: sec, start: "top 92%", end: "top 48%", scrub: .8 }
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
