@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Elena Riazanova | AI Marketing Atelier</title>
-<meta name="description" content="AI-assisted creative direction and content strategy for fashion and lifestyle brands." />
+<title>Elena Riazanova | Content &amp; Creative Direction for Luxury</title>
+<meta name="description" content="Content and creative direction, social, campaign and motion for luxury and lifestyle brands by Elena Riazanova." />
+<meta property="og:title" content="Elena Riazanova | Content &amp; Creative Direction for Luxury" />
+<meta property="og:description" content="Content, campaign, motion and identity case studies for luxury and lifestyle brands." />
+<meta property="og:image" content="https://helenmiuwmiu-svg.github.io/elena-ai-portfolio/assets/works/vca-cover.jpg" />
+<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..900,0..1&display=swap" rel="stylesheet" />
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..900,0..1&amp;display=swap" rel="stylesheet" />
 <style>
 :root {
   --bg: #ECF5FF;
@@ -20,683 +20,1186 @@
   --ink: #0F1419;
   --paper: #F8FBFF;
   --soft: #DCEBFA;
-  --red: #D962A7;
-  --blue: #5384B8;
+  --pink: #D962A7;
+  --mint: #A1E5DA;
+  --lavender: #BFA3E5;
+  --red-soft: #E5A3A3;
+  --sand: #E5DFA3;
   --muted: #5C6978;
-  --line: rgba(15,20,25,.13);
-  --silver: #B9C6D2;
+  --line: rgba(15, 20, 25, .15);
 }
+
 * { box-sizing: border-box; }
-html { background: var(--bg); scroll-behavior: auto; }
+html { overflow-x: clip; background: var(--bg); scroll-behavior: smooth; }
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: clip;
   color: var(--ink);
-  font-family: "Fraunces";
-  font-variation-settings: "opsz" 14, "wght" 430;
   background:
-    radial-gradient(circle at 1px 1px, rgba(15,20,25,.022) 1px, transparent 0) 0 0/7px 7px,
-    radial-gradient(circle at 86% 18%, rgba(217,98,167,.1), transparent 28vw),
-    radial-gradient(circle at 0 72%, rgba(83,132,184,.13), transparent 30vw),
+    radial-gradient(circle at 1px 1px, rgba(15, 20, 25, .022) 1px, transparent 0) 0 0 / 7px 7px,
     var(--bg);
-  overflow-x: hidden;
+  font-family: "Fraunces", Georgia, serif;
+  font-variation-settings: "opsz" 14, "wght" 430;
 }
-body:before {
-  display: none;
-}
+
+::selection { background: var(--lavender); color: var(--ink); }
 a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; }
 button { font: inherit; }
-.display { font-variation-settings: "opsz" 144, "wght" 525; letter-spacing: 0; }
-.accent { font-style: italic; font-variation-settings: "opsz" 144, "wght" 430; }
-.meta { font-variation-settings: "opsz" 9, "wght" 650; text-transform: uppercase; letter-spacing: .15em; }
-.red { color: var(--red); }
-.blue { color: var(--blue); }
+a:focus,
+button:focus {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+.display { font-variation-settings: "opsz" 144, "wght" 520; }
+.accent { font-style: italic; font-variation-settings: "opsz" 120, "wght" 420; }
+.meta {
+  font-variation-settings: "opsz" 9, "wght" 650;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
 .nav {
   position: fixed;
   inset: 0 0 auto;
   z-index: 80;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 22px clamp(18px,4vw,52px);
-  color: var(--bg);
-  mix-blend-mode: difference;
-}
-.nav-links { display: flex; gap: clamp(16px,2.2vw,32px); font-size: 14px; }
-.magnetic { display: inline-block; will-change: transform; transition: transform .24s cubic-bezier(.2,.8,.2,1); }
-.section {
-  position: relative;
-  padding: clamp(92px,12vw,164px) clamp(18px,4vw,52px);
-}
-.inner { max-width: 1440px; margin: 0 auto; }
-.section-label { color: var(--muted); margin-bottom: 20px; }
-.h2 {
-  font-size: clamp(58px,10vw,150px);
-  line-height: .86;
-  margin: 0;
-}
-.copy {
-  font-size: clamp(17px,1.22vw,21px);
-  line-height: 1.55;
-  color: #2B3642;
-}
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 16px 9px;
-  border: 1px solid rgba(15,20,25,.34);
-  border-radius: 999px;
-  background: rgba(248,251,255,.66);
-  backdrop-filter: blur(14px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.82);
-  font-size: 12px;
-}
-.pill:before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 0 7px rgba(217,98,167,.09);
-}
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr;
-  padding: clamp(84px,8vw,116px) clamp(18px,4vw,52px) 52px;
+  justify-content: flex-start;
+  gap: 22px;
+  padding: 20px clamp(18px, 4vw, 52px);
   color: var(--navy);
-  background:
-    radial-gradient(circle at 1px 1px, rgba(26,67,115,.024) 1px, transparent 0) 0 0/7px 7px,
-    radial-gradient(circle at 83% 18%, rgba(83,132,184,.16), transparent 28vw),
-    var(--bg);
+  background: rgba(236, 245, 255, .76);
+  border-bottom: 1px solid rgba(26, 67, 115, .08);
+  backdrop-filter: blur(16px);
+}
+
+.nav-brand { font-size: 27px; font-style: italic; }
+.nav-links {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3vw, 42px);
+  font-size: 14px;
+  transform: translateX(-50%);
+}
+.nav-links a { position: relative; padding: 4px 0 6px; }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transition: left .28s ease, right .28s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.is-current::after { left: 0; right: 0; }
+.nav a { transition: opacity .2s ease; }
+.nav a:hover { opacity: .58; }
+
+.hero {
+  min-height: calc(100svh - 44px);
+  display: grid;
+  padding: clamp(92px, 9vw, 126px) clamp(18px, 4vw, 52px) clamp(38px, 5vw, 66px);
+  color: var(--navy);
   overflow: hidden;
 }
+
 .hero-main {
-  position: relative;
-  z-index: 3;
+  width: min(100%, 1540px);
+  margin: auto;
   display: grid;
-  grid-template-columns: minmax(0,1fr) minmax(190px,320px);
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 330px);
   align-items: center;
-  gap: clamp(28px,5vw,88px);
-  perspective: 1500px;
+  gap: clamp(44px, 6vw, 100px);
 }
-.hero-copy { align-self: center; padding-bottom: 0; }
+.hero-main > * { min-width: 0; }
+
 .hero-name {
+  margin: 0 0 clamp(18px, 2vw, 28px);
+  font-size: clamp(84px, 12.2vw, 198px);
+  line-height: .84;
+  letter-spacing: 0;
   color: var(--navy);
-  font-size: clamp(82px,14.4vw,238px);
-  line-height: .82;
-  margin: 0 0 clamp(18px,2vw,28px);
-  will-change: transform;
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
 }
-.hero-surname { color: var(--navy); }
+
 .hero-position {
-  max-width: 780px;
-  color: rgba(26,67,115,.86);
-  font-size: clamp(23px,2.35vw,39px);
-  line-height: 1.08;
+  max-width: 800px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(29px, 2.65vw, 43px);
+  line-height: 1.06;
   font-variation-settings: "opsz" 72, "wght" 420;
 }
+.hero-position em { color: var(--pink); font-weight: inherit; }
+
 .hero-visual {
-  position: relative;
-  justify-self: end;
-  align-self: center;
-  width: clamp(190px,23vw,300px);
-  height: clamp(420px,72vh,560px);
+  justify-self: center;
+  width: clamp(220px, 23vw, 320px);
+  height: clamp(440px, 66vh, 560px);
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  overflow: visible;
   pointer-events: none;
 }
-.hero-product-video {
+
+.hero-product {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center top;
-  mix-blend-mode: normal;
-  filter: saturate(.92) contrast(1.02);
-  background: transparent;
+  filter: saturate(.94) contrast(1.02);
 }
-.ticker {
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: rgba(248,251,255,.52);
-  white-space: nowrap;
-  padding: 16px 0;
-}
-.ticker-track {
-  display: inline-flex;
-  gap: 48px;
-  animation: ticker 30s linear infinite;
-  font-size: clamp(27px,3vw,50px);
-}
-.ticker-track span { display: inline-flex; align-items: center; gap: 48px; }
-.tick-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(15,20,25,.48); }
-@keyframes ticker { to { transform: translateX(-50%); } }
-.split {
-  display: grid;
-  grid-template-columns: .92fr 1.08fr;
-  gap: clamp(40px,7vw,104px);
-  align-items: start;
-}
-.help-list {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--line);
-  margin-top: 56px;
-}
-.help-item {
-  display: grid;
-  grid-template-columns: 76px 1fr .8fr;
-  gap: 24px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line);
-}
-.help-item h3 { margin: 0; font-size: clamp(25px,2.4vw,40px); line-height: 1.02; }
-.help-item p { margin: 0; }
-.lookbook { background: linear-gradient(180deg, rgba(236,245,255,.66), #E3EFFB); }
-.case-shell {
-  margin-top: 54px;
-  display: grid;
-  grid-template-columns: minmax(360px,.92fr) minmax(0,1.08fr);
-  gap: clamp(28px,5vw,70px);
-  align-items: stretch;
-}
-.case-copy {
-  padding: clamp(24px,3vw,42px);
-  border: 1px solid rgba(15,20,25,.12);
-  background: rgba(248,251,255,.72);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.82);
-}
-.case-title { font-size: clamp(44px,5.2vw,82px); line-height: .92; margin: 30px 0 24px; }
-.case-tabs {
+
+.archive-line {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-.case-tab {
-  border: 1px solid rgba(15,20,25,.24);
-  border-radius: 999px;
-  padding: 8px 13px 9px;
-  color: var(--muted);
-  background: rgba(248,251,255,.7);
-  cursor: pointer;
-}
-.case-tab.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
-.case-detail {
-  margin-top: 24px;
-  min-height: 104px;
-  border-top: 1px solid var(--line);
-  padding-top: 18px;
-}
-.case-visual {
-  min-height: 560px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(15,20,25,.12);
-  background: #111820;
-  box-shadow: 0 48px 110px -78px rgba(15,20,25,.72);
-}
-.campaign-frame {
-  position: absolute;
-  border: 1px solid rgba(236,245,255,.34);
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 28px 80px -46px rgba(0,0,0,.58);
-}
-.campaign-frame.one { left: 7%; top: 9%; width: 46%; height: 72%; transform: rotate(-4deg); }
-.campaign-frame.two { right: 7%; top: 15%; width: 38%; height: 55%; transform: rotate(3deg); }
-.campaign-frame.three { right: 17%; bottom: 8%; width: 54%; height: 30%; transform: rotate(-1deg); }
-.case-visual:after {
-  content: "product / catalog / campaign system";
-  position: absolute;
-  left: 28px;
-  bottom: 24px;
-  color: rgba(236,245,255,.78);
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-size: 11px;
-}
-.process-grid {
-  display: grid;
-  grid-template-columns: minmax(280px,.72fr) minmax(0,1.28fr);
-  gap: clamp(34px,6vw,88px);
-  margin-top: 58px;
-  align-items: start;
-}
-.receipt {
-  position: sticky;
-  top: 110px;
-  padding: 26px;
-  border: 1px solid rgba(15,20,25,.24);
-  background: rgba(248,251,255,.78);
-  box-shadow: 0 34px 90px -66px rgba(15,20,25,.62);
-}
-.receipt-row {
-  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  border-top: 1px solid rgba(15,20,25,.12);
-  padding: 14px 0 0;
-  margin-top: 14px;
-}
-.rail {
-  position: relative;
-  border-left: 1px solid rgba(15,20,25,.22);
-  padding-left: clamp(28px,4vw,54px);
-}
-.rail-progress {
-  position: absolute;
-  left: -1px;
-  top: 0;
-  width: 2px;
-  height: 20%;
-  background: var(--red);
-  transform-origin: top;
-}
-.rail-step {
-  min-height: 150px;
-  padding-bottom: 32px;
-  cursor: pointer;
-}
-.rail-step h3 { font-size: clamp(30px,3vw,52px); line-height: 1; margin: 10px 0 12px; }
-.rail-step p { max-width: 610px; }
-.rail-step.active h3 { color: var(--red); }
-.packages {
-  background: linear-gradient(180deg, #E3EFFB, rgba(236,245,255,.68));
-}
-.service-menu {
-  margin-top: 54px;
+  gap: 24px;
+  padding: 15px clamp(18px, 4vw, 52px);
   border-top: 1px solid var(--line);
-}
-.package {
-  display: grid;
-  grid-template-columns: 120px 1fr .72fr;
-  gap: 26px;
-  align-items: baseline;
-  padding: 28px 0;
   border-bottom: 1px solid var(--line);
+  color: var(--navy);
+  background: rgba(248, 251, 255, .48);
+  white-space: nowrap;
+  overflow: hidden;
 }
-.package h3 { font-size: clamp(30px,3.4vw,58px); line-height: 1; margin: 0; }
-.package p { margin: 0; }
-.thinking {
+
+.archive-line span { display: inline-flex; align-items: center; gap: 24px; }
+.archive-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); }
+
+.section {
+  padding: clamp(88px, 11vw, 154px) clamp(18px, 4vw, 52px);
+  scroll-margin-top: 72px;
+}
+
+.inner { width: min(100%, 1440px); margin: 0 auto; }
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+  gap: clamp(34px, 7vw, 110px);
+  align-items: end;
+  margin-bottom: clamp(54px, 8vw, 104px);
+}
+
+.section-label { color: var(--steel); margin-bottom: 18px; }
+.h2 { margin: 0; font-size: clamp(56px, 9.4vw, 142px); line-height: .88; letter-spacing: 0; }
+.copy { margin: 0; color: #2B3642; font-size: clamp(17px, 1.25vw, 21px); line-height: 1.55; }
+.note { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+.work-library {
+  color: var(--bg);
   background: var(--ink);
+}
+
+.work-library .section-label { color: var(--mint); }
+.work-library .copy { color: rgba(236, 245, 255, .72); }
+.library-intro { margin-bottom: clamp(50px, 7vw, 90px); }
+.library-shell {
+  --book-accent: var(--pink);
+  --sidebar-width: clamp(190px, 19vw, 280px);
+  --header-height: 72px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 62px);
+  align-items: start;
+}
+
+.book-nav {
+  position: sticky;
+  top: 104px;
+  display: grid;
+  border-top: 1px solid rgba(236, 245, 255, .22);
+}
+
+.book-tab {
+  appearance: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 17px 0;
+  color: rgba(236, 245, 255, .67);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(236, 245, 255, .22);
+  cursor: pointer;
+  transition: color .25s ease, padding-left .25s ease;
+}
+
+.book-tab:hover,
+.book-tab:focus-visible,
+.book-tab[aria-selected="true"] { color: var(--bg); padding-left: 8px; }
+.book-tab[aria-selected="true"] .book-tab-number { color: var(--book-accent); }
+.book-tab-name { font-size: clamp(15px, 1.2vw, 19px); line-height: 1.05; }
+.book-tab-state { color: currentColor; font-size: 18px; line-height: 1; transition: color .25s ease, transform .25s ease; }
+.book-tab[aria-selected="true"] .book-tab-state { color: var(--book-accent); transform: translateX(4px); }
+
+.book-column {
+  min-width: 0;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  gap: 18px;
+}
+.book-stage {
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+.book-stage:focus-visible { outline: 0; }
+.book-stage:focus-visible .book-spread { outline: 2px solid var(--book-accent); outline-offset: 7px; }
+.book-expand {
+  position: absolute;
+  z-index: 6;
+  top: 12px;
+  right: 12px;
+  padding: 8px 10px 9px;
+  color: var(--bg);
+  background: rgba(7, 14, 20, .72);
+  border: 1px solid rgba(236, 245, 255, .28);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+.book-expand:hover { color: var(--ink); background: var(--book-accent); }
+.book-expand:focus { outline-color: var(--book-accent); }
+
+.book-spread {
+  position: relative;
+  isolation: isolate;
+  width: min(
+    calc(100vw - var(--sidebar-width) - 110px),
+    calc((100svh - var(--header-height) - 145px) * 1.6),
+    1120px,
+    100%
+  );
+  aspect-ratio: 16 / 10;
+  height: auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .25);
+}
+
+.book-spread::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 28px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(20, 35, 45, .08),
+    rgba(255, 255, 255, .35),
+    rgba(20, 35, 45, .07),
+    transparent
+  );
+}
+
+.book-spread.is-turning .book-page { animation: spreadFade .38s ease; }
+@keyframes spreadFade {
+  0% { opacity: .42; transform: translateX(12px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.book-page { min-width: 0; min-height: 0; overflow: hidden; }
+.book-copy-page {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(34px, 4vw, 58px) clamp(46px, 4.8vw, 72px) clamp(34px, 4vw, 58px) clamp(34px, 4vw, 58px);
+  border-right: 1px solid rgba(15, 20, 25, .13);
+}
+.book-category { color: var(--book-accent); margin-bottom: auto; }
+.book-kicker { margin: clamp(24px, 5vh, 56px) 0 15px; color: var(--steel); }
+.book-title {
+  min-width: 0;
+  margin: 0;
+  max-width: 9ch;
+  font-size: clamp(34px, 3.35vw, 60px);
+  line-height: .92;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+.book-description { max-width: 23ch; margin: 22px 0; color: #33404D; font-size: clamp(16px, 1.25vw, 22px); line-height: 1.38; }
+.book-spread[data-layout="film"] .book-description { max-width: 15ch; }
+.book-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+.book-meta span {
+  padding: 6px 8px 7px;
+  border: 1px solid rgba(15, 20, 25, .18);
+  font-size: 9px;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.book-visual {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  place-items: stretch;
+  overflow: hidden;
+  padding: 0 0 0 clamp(18px, 2.6vw, 40px);
+  background: #E8EEF4;
+}
+.book-spread[data-layout="cover"] .book-visual {
+  background:
+    radial-gradient(circle at 26% 18%, rgba(255,255,255,.34), transparent 34%),
+    radial-gradient(circle at 82% 82%, rgba(83,132,184,.14), transparent 38%),
+    repeating-linear-gradient(90deg, rgba(26,67,115,.035) 0 1px, transparent 1px 7px),
+    #DDECF8;
+}
+.book-spread[data-layout="film"] .book-visual { background: #DDECF8; }
+.book-media {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: var(--media-fit, contain);
+  object-position: var(--media-position, center);
+  background: #E8EEF4;
+}
+.book-spread[data-layout="film"] .book-media { background: #DDECF8; }
+.video-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  place-items: stretch;
+  background: #DDECF8;
+}
+.video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 58px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+  color: var(--ink);
+  background: rgba(236, 245, 255, .82);
+  border: 1px solid rgba(15, 20, 25, .14);
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+.video-play::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid currentColor;
+  transform: translateX(2px);
+}
+.video-frame.is-playing .video-play { opacity: 0; pointer-events: none; }
+.book-pair,
+.book-duo {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(15, 20, 25, .15);
+}
+.book-pair figure,
+.book-duo figure { position: relative; min-width: 0; margin: 0; background: #E8EEF4; overflow: hidden; }
+.book-pair img,
+.book-duo img { width: 100%; height: 100%; object-fit: contain; }
+.book-zoom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #E8EEF4;
+  cursor: zoom-in;
+}
+.book-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
+  transition: transform .42s cubic-bezier(.2, .8, .2, 1);
+}
+.book-zoom:hover img { transform: scale(1.35); }
+.material-study {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, .7fr) minmax(120px, .3fr);
+  gap: 14px;
+  padding: 18px;
+  background: #DDECF8;
+}
+.material-study figure {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #E8EEF4;
+}
+.material-study img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--media-fit, contain);
+  object-position: var(--media-position, center);
+}
+.campaign-grid {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 18px;
+  background: #DDECF8;
+}
+.campaign-grid figure { position: relative; min-width: 0; min-height: 0; margin: 0; overflow: hidden; background: #E8EEF4; }
+.campaign-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--media-fit, cover);
+  object-position: var(--media-position, center);
+  transition: transform .38s cubic-bezier(.2, .8, .2, 1);
+}
+.campaign-grid figure:hover img { transform: scale(1.12); }
+.visual-label {
+  position: absolute;
+  left: 13px;
+  bottom: 13px;
+  padding: 6px 8px 7px;
+  background: rgba(248, 251, 255, .88);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(9px);
+}
+.book-controls {
+  display: grid;
+  grid-template-columns: 44px minmax(140px, 240px) 44px 58px;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+  padding-top: 18px;
   color: var(--bg);
 }
-.thinking .copy,
-.thinking p { color: rgba(236,245,255,.76); }
-.principles {
+.book-arrow {
+  width: 44px;
+  height: 44px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 18px;
-  margin-top: 54px;
+  place-items: center;
+  color: var(--bg);
+  background: transparent;
+  border: 1px solid rgba(236, 245, 255, .34);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
 }
-.principle {
-  border-top: 1px solid rgba(236,245,255,.24);
-  padding-top: 18px;
+.book-arrow:hover { color: var(--ink); border-color: var(--book-accent); background: var(--book-accent); }
+.book-arrow:disabled { opacity: .24; cursor: default; }
+.book-arrow:disabled:hover { color: var(--bg); border-color: rgba(236, 245, 255, .34); background: transparent; }
+.book-progress { height: 1px; overflow: hidden; background: rgba(236, 245, 255, .25); }
+.book-progress span { display: block; width: 0; height: 100%; background: var(--book-accent); transition: width .4s ease; }
+.book-count { min-width: 48px; text-align: right; }
+.book-hint { margin: 15px 0 0; color: rgba(236, 245, 255, .48); text-align: center; }
+
+.library-shell.is-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  grid-template-columns: 1fr;
+  place-items: center;
+  height: 100svh;
+  min-height: 100svh;
+  padding: 28px;
+  overflow: hidden;
+  background: rgba(8, 13, 18, .96);
+  --sidebar-width: 0px;
 }
-.principle h3 { font-size: clamp(25px,2.4vw,38px); line-height: 1.06; margin: 14px 0; }
-.appointment-grid {
+.library-shell.is-expanded .book-nav { display: none; }
+.library-shell.is-expanded .book-column {
+  position: relative;
+  top: auto;
+  width: min(94vw, 1440px);
+  max-height: calc(100svh - 56px);
+  gap: 14px;
+}
+.library-shell.is-expanded .book-spread { width: min(94vw, calc((100svh - 155px) * 1.6), 1440px); }
+.library-shell.is-expanded .book-controls { padding-top: 12px; }
+.library-shell.is-expanded .book-expand { top: -2px; right: -2px; }
+.library-shell.is-expanded .book-expand::after { content: " view"; }
+.library-shell.is-expanded .book-hint { display: none; }
+.body-no-scroll { overflow: hidden; }
+
+@media (min-width: 981px) {
+  .library-shell { min-height: calc(100svh + 360px); }
+  .book-column { position: sticky; top: 96px; }
+}
+
+@media (max-height: 780px) {
+  .book-hint { display: none; }
+}
+
+.about-grid {
   display: grid;
-  grid-template-columns: minmax(0,1fr) 440px;
-  gap: clamp(36px,6vw,92px);
-  align-items: center;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  gap: clamp(44px, 8vw, 120px);
+  align-items: start;
 }
-.contact-heading {
-  font-size: clamp(64px,9vw,138px);
-  line-height: .86;
-  margin: 0 0 34px;
+.about-statement { margin: 0; color: var(--navy); font-size: clamp(44px, 6.6vw, 98px); line-height: .94; }
+.about-copy { display: grid; gap: 24px; padding-top: 10px; }
+.tools { display: flex; flex-wrap: wrap; gap: 9px; padding-top: 12px; }
+.tools span { padding: 7px 10px 8px; border: 1px solid rgba(15, 20, 25, .18); background: rgba(248, 251, 255, .45); font-size: 12px; }
+
+.method { padding-top: 0; }
+.method-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, .8fr) minmax(0, 1.2fr);
+  gap: clamp(48px, 9vw, 140px);
+  align-items: start;
 }
-.contact-email {
-  display: block;
-  font-size: clamp(36px,4.7vw,72px);
-  line-height: .96;
-  overflow-wrap: anywhere;
+.method-panel {
+  position: sticky;
+  top: 126px;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(30px, 4vw, 58px);
+  color: var(--bg);
+  background: var(--navy);
+  overflow: hidden;
 }
-.contact-email:after {
-  content: " \2192";
-  white-space: nowrap;
+.method-panel::after {
+  content: attr(data-step);
+  position: absolute;
+  right: -12px;
+  bottom: -50px;
+  color: rgba(236, 245, 255, .08);
+  font-size: 260px;
+  line-height: 1;
+  font-variation-settings: "opsz" 144, "wght" 650;
 }
-.slip {
-  padding: 30px;
-  border: 1px solid rgba(15,20,25,.24);
-  background: rgba(248,251,255,.68);
-  box-shadow: 0 34px 86px -66px rgba(15,20,25,.62);
+.method-panel .section-label { color: var(--mint); }
+.method-active-title { position: relative; z-index: 1; margin: auto 0 22px; max-width: 8ch; font-size: clamp(46px, 6vw, 86px); line-height: .9; }
+.method-active-copy { position: relative; z-index: 1; max-width: 35ch; margin: 0; color: rgba(236, 245, 255, .72); font-size: 17px; line-height: 1.5; }
+.method-steps { display: grid; }
+.method-step {
+  appearance: none;
+  min-height: 32vh;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: clamp(18px, 3vw, 42px);
+  align-content: center;
+  padding: clamp(34px, 5vw, 72px) 0;
+  color: rgba(15, 20, 25, .42);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+  transition: color .3s ease, padding-left .3s ease;
 }
-.slip-line {
+.method-step:last-child { border-bottom: 1px solid var(--line); }
+.method-step:hover,
+.method-step:focus-visible,
+.method-step.is-active { color: var(--ink); padding-left: 14px; }
+.method-step-number { color: var(--steel); }
+.method-step-title { display: block; margin: 0 0 14px; font-size: clamp(34px, 4vw, 62px); line-height: .94; font-weight: 450; }
+.method-step-copy { display: block; max-width: 38ch; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+
+.cap-label { color: var(--steel); margin-bottom: 12px; }
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(20px, 3vw, 44px);
+  margin: clamp(40px, 6vw, 76px) 0 clamp(30px, 4vw, 50px);
+  padding-top: clamp(30px, 4vw, 44px);
+  border-top: 1px solid var(--line);
+}
+.metric-num {
+  font-size: clamp(46px, 6vw, 88px);
+  line-height: .88;
+  color: var(--navy);
+  font-variation-settings: "opsz" 144, "wght" 520;
+}
+.metric-label { margin-top: 13px; max-width: 22ch; color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+.experience-list { display: grid; border-top: 1px solid var(--line); }
+.xp { padding: clamp(24px, 3.4vw, 40px) 0; border-bottom: 1px solid var(--line); }
+.xp-date { color: var(--steel); margin-bottom: 12px; }
+.xp-role { margin: 0; font-size: clamp(23px, 2.5vw, 34px); line-height: 1.02; color: var(--navy); font-variation-settings: "opsz" 72, "wght" 460; }
+.xp-org { margin: 7px 0 14px; color: #33404D; font-size: clamp(15px, 1.2vw, 18px); }
+.xp-copy { margin: 0; max-width: 74ch; color: #2B3642; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.5; }
+
+.contact { background: var(--navy); color: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .5fr); gap: 48px; align-items: end; }
+.contact h2 { margin: 0 0 34px; font-size: clamp(58px, 9vw, 136px); line-height: .86; }
+.contact-email { display: inline-block; font-size: clamp(28px, 4.2vw, 64px); line-height: 1; border-bottom: 1px solid rgba(236, 245, 255, .48); }
+.socials { display: grid; gap: 0; border-top: 1px solid rgba(236, 245, 255, .26); }
+.socials a { display: flex; justify-content: space-between; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(236, 245, 255, .26); font-size: 20px; }
+.socials a:hover { color: var(--mint); }
+.footer {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
-  border-top: 1px solid rgba(15,20,25,.12);
-  margin-top: 18px;
-  padding-top: 16px;
+  gap: 24px;
+  padding: 24px clamp(18px, 4vw, 52px);
+  background: var(--navy);
+  color: rgba(236, 245, 255, .68);
+  border-top: 1px solid rgba(236, 245, 255, .2);
 }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s cubic-bezier(.2, .8, .2, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
 @media (max-width: 980px) {
-  .nav-links { display: none; }
-  .hero-main,
-  .split,
-  .case-shell,
-  .process-grid,
-  .appointment-grid { grid-template-columns: 1fr; }
-  .hero-main { gap: clamp(16px,4vw,28px); }
-  .hero-visual { width: clamp(170px,40vw,240px); height: 360px; justify-self: end; margin-top: -18px; }
-  .help-item,
-  .package { grid-template-columns: 1fr; gap: 12px; }
-  .receipt { position: relative; top: 0; }
-  .principles { grid-template-columns: 1fr 1fr; }
+  .nav-links { position: static; margin-left: auto; transform: none; }
+  .nav-links { gap: 18px; }
+  .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+  .hero-main, .section-head, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-main { align-content: center; }
+  .hero-visual { width: clamp(170px, 38vw, 230px); height: 340px; margin-top: -12px; }
+  .library-shell { grid-template-columns: 1fr; }
+  .library-shell { --sidebar-width: 0px; }
+  .book-nav {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-top: 0;
+    border-bottom: 1px solid rgba(236, 245, 255, .22);
+  }
+  .book-nav::-webkit-scrollbar { display: none; }
+  .book-tab { flex: 0 0 auto; width: auto; min-width: 174px; grid-template-columns: 28px 1fr; padding-right: 18px; border-bottom: 0; }
+  .book-tab-state { display: none; }
+  .book-tab:hover, .book-tab:focus-visible, .book-tab[aria-selected="true"] { padding-left: 5px; }
+  .book-spread { width: min(calc(100vw - 36px), calc((100svh - 170px) * 1.6), 1120px); }
+  .method-grid { grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr); gap: 38px; }
+  .method-panel { min-height: 410px; }
 }
-@media (max-width: 600px) {
-  .hero { padding-top: 88px; }
-  .hero-name,
-  .h2,
-  .contact-heading { font-size: clamp(58px,18vw,88px); }
-  .hero-position { font-size: clamp(19px,6vw,27px); }
-  .hero-visual { width: min(48vw,190px); height: 310px; margin-top: -10px; }
-  .case-visual { min-height: 420px; }
-  .principles { grid-template-columns: 1fr; }
+
+@media (max-width: 620px) {
+  .nav { padding-top: 16px; padding-bottom: 16px; }
+  .nav-brand { font-size: 23px; }
+  .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+  .hero { padding-top: 84px; }
+  .hero-main { gap: 28px; }
+  .hero-name { font-size: clamp(54px, 16.8vw, 66px); line-height: .88; }
+  .hero-position { max-width: 18ch; font-size: clamp(20px, 5.4vw, 23px); line-height: 1.08; }
+  .hero-visual { width: min(45vw, 170px); height: 260px; justify-self: end; margin-top: -4px; }
+  .archive-line span:nth-child(2) { display: none; }
+  .h2 { font-size: clamp(54px, 18vw, 86px); }
+  .work-library { padding-left: 0; padding-right: 0; }
+  .work-library .library-intro, .work-library .library-shell { padding-left: 18px; padding-right: 18px; }
+  .book-tab { min-width: 155px; }
+  .book-spread { width: min(calc(100vw - 36px), calc((100svh - 170px) * 1.6)); }
+  .book-copy-page { padding: 18px 18px 18px 16px; }
+  .book-category { margin-bottom: auto; }
+  .book-kicker { margin: 14px 0 8px; font-size: 8px; letter-spacing: .1em; }
+  .book-title {
+    max-width: 100%;
+    font-size: clamp(19px, 5.1vw, 25px);
+    line-height: .98;
+    overflow-wrap: anywhere;
+  }
+  .book-description {
+    max-width: 100%;
+    margin: 10px 0;
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+  .book-meta { display: none; }
+  .book-visual { padding-left: 8px; }
+  .book-pair { grid-template-columns: 1fr 1fr; }
+  .material-study {
+    grid-template-columns: minmax(0, .66fr) minmax(0, .34fr);
+    gap: 6px;
+    padding: 6px;
+  }
+  .campaign-grid {
+    gap: 5px;
+    padding: 6px;
+  }
+  .visual-label {
+    left: 6px;
+    bottom: 6px;
+    padding: 4px 5px;
+    font-size: 6.5px;
+    letter-spacing: .08em;
+  }
+  .campaign-grid .visual-label { display: none; }
+  .book-controls { grid-template-columns: auto auto 1fr; }
+  .book-count { grid-column: 3; grid-row: 1; }
+  .book-progress { grid-column: 1 / -1; grid-row: 2; }
+  .book-hint { display: none; }
+  .method-grid { grid-template-columns: 1fr; gap: 26px; }
+  .method-panel { position: sticky; top: 74px; z-index: 4; min-height: 280px; padding: 28px; }
+  .method-panel::after { font-size: 170px; bottom: -35px; }
+  .method-active-title { margin: 50px 0 12px; font-size: 46px; }
+  .method-step { min-height: 250px; grid-template-columns: 40px 1fr; }
+  .footer { flex-direction: column; }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  *, *:before, *:after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
 <body>
 <header class="nav">
-  <a class="magnetic accent text-3xl" href="#arrival">elena r.</a>
-  <nav class="nav-links">
-    <a class="magnetic" href="#help">directions</a>
-    <a class="magnetic" href="#work">lookbook</a>
-    <a class="magnetic" href="#process">method</a>
-    <a class="magnetic" href="#packages">menu</a>
-    <a class="magnetic" href="#appointment">appointment</a>
+  <a class="nav-brand" href="#top">elena r.</a>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="#work">work</a>
+    <a href="#method">method</a>
+    <a href="#about">about</a>
+    <a href="#contact">contact</a>
   </nav>
-  <a class="magnetic" href="#appointment">say hi -></a>
 </header>
 
 <main>
-  <section id="arrival" class="hero">
+  <section id="top" class="hero">
     <div class="hero-main">
-      <div class="hero-copy">
-        <h1 class="hero-name display" id="heroName">Elena<br><span class="hero-surname">Riazanova</span></h1>
-        <p class="hero-position">AI-assisted creative direction & content strategy for fashion and lifestyle brands.</p>
+      <div>
+        <h1 class="hero-name display" id="heroName">Elena<br>Riazanova</h1>
+        <p class="hero-position">Creative direction and visual content for <em>luxury</em> and lifestyle brands.</p>
       </div>
-      <div class="hero-visual" aria-label="AI product object animation">
-        <img class="hero-product-video" src="assets/hero-product-slot-transparent.gif" alt="" />
+      <div class="hero-visual" aria-label="Portfolio receipt animation">
+        <img class="hero-product" src="assets/hero-product-slot-once.gif" alt="Animated portfolio receipt" />
       </div>
     </div>
   </section>
 
-  <div class="ticker" aria-label="portfolio focus areas">
-    <div class="ticker-track accent">
-      <span>product insertion <i class="tick-dot"></i> catalog images <i class="tick-dot"></i> campaign shoots <i class="tick-dot"></i> social templates <i class="tick-dot"></i> AI video <i class="tick-dot"></i> creative experiments <i class="tick-dot"></i></span>
-      <span aria-hidden="true">product insertion <i class="tick-dot"></i> catalog images <i class="tick-dot"></i> campaign shoots <i class="tick-dot"></i> social templates <i class="tick-dot"></i> AI video <i class="tick-dot"></i> creative experiments <i class="tick-dot"></i></span>
-    </div>
+  <div class="archive-line meta" aria-label="Portfolio focus areas">
+    <span>brand chapters <i class="archive-dot"></i> campaign systems <i class="archive-dot"></i> product fidelity <i class="archive-dot"></i> motion</span>
+    <span>independent work / ongoing</span>
   </div>
 
-  <section id="help" class="section">
+  <section id="work" class="section work-library">
     <div class="inner">
-      <div class="split">
+      <div class="section-head library-intro reveal">
         <div>
-          <div class="section-label meta">01 / work directions</div>
-          <h2 class="h2 display">what I make with <span class="red">AI</span></h2>
+          <div class="section-label meta">01 / selected work</div>
+          <h2 class="h2 display">brand chapters, not just <span class="accent" style="color:var(--pink)">images.</span></h2>
         </div>
-        <p class="copy">The portfolio is organized around real visual outputs: products placed into scenes, catalog systems, campaigns, social content, motion, and open creative work.</p>
-      </div>
-      <div class="help-list">
-        <div class="help-item"><span class="meta text-slate-500">01</span><h3 class="accent">Real Product Insertion</h3><p class="copy">Clothing, jewelry, beauty, furniture, and other objects placed into AI scenes with attention to shape, material, scale, and brand mood.</p></div>
-        <div class="help-item"><span class="meta text-slate-500">02</span><h3 class="accent">Catalog & Product Cards</h3><p class="copy">Clean product images, marketplace visuals, website cards, PDP-style frames, and catalog-style shoots.</p></div>
-        <div class="help-item"><span class="meta text-slate-500">03</span><h3 class="accent">Fashion & Beauty Campaigns</h3><p class="copy">Full campaign worlds for launches, collections, outdoor advertising, digital ads, and editorial-style shoots.</p></div>
-        <div class="help-item"><span class="meta text-slate-500">04</span><h3 class="accent">Social Content & UGC Style</h3><p class="copy">Carousels, story templates, UGC-style concepts, Reels/TikTok directions, and content sets that can live on brand channels.</p></div>
-        <div class="help-item"><span class="meta text-slate-500">05</span><h3 class="accent">AI Video & Motion</h3><p class="copy">Image animation, moving product assets, short ad films, motion tests, and video-first campaign content.</p></div>
-        <div class="help-item"><span class="meta text-slate-500">06</span><h3 class="accent">Creative Work Without Briefs</h3><p class="copy">Free experiments where my taste, references, styling ideas, and personal visual point of view are easiest to see.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="work" class="section lookbook">
-    <div class="inner">
-      <div class="split">
         <div>
-          <div class="section-label meta">02 / selected work</div>
-          <h2 class="h2 display">the <span class="red">work menu</span></h2>
+          <p class="copy">Choose a chapter, then turn the pages. The goal is a portfolio that reads like an archive of campaign thinking: concept, product accuracy, rollout logic and motion.</p>
+          <p class="note" style="margin-top:18px;color:rgba(236,245,255,.48)">All projects are self-initiated concept studies. Brand references are creative context; no affiliation is implied.</p>
         </div>
-        <p class="copy">Each work type should show both control and taste: the product stays recognizable, while the image feels campaign-ready.</p>
       </div>
-      <div class="case-shell">
-        <article class="case-copy">
-          <div class="pill">portfolio system</div>
-          <h3 class="case-title display">From Product to Campaign</h3>
-          <p class="copy">The strongest direction is to show one core skill across formats: taking a real item or brand idea and building the visual world around it.</p>
-          <div class="case-tabs" role="tablist">
-            <button class="case-tab active" data-case="product">Product</button>
-            <button class="case-tab" data-case="catalog">Catalog</button>
-            <button class="case-tab" data-case="campaign">Campaign</button>
-            <button class="case-tab" data-case="social">Social</button>
-            <button class="case-tab" data-case="video">Video</button>
-            <button class="case-tab" data-case="free">Free Work</button>
+      <div class="library-shell" id="libraryShell">
+        <nav class="book-nav" id="bookNav" role="tablist" aria-label="Work chapters"></nav>
+        <div class="book-column">
+          <div class="book-stage" id="bookStage" aria-live="polite">
+            <article class="book-spread" id="bookSpread">
+              <section class="book-page book-copy-page">
+                <div class="book-category meta" id="bookCategory"></div>
+                <div class="book-kicker meta" id="bookKicker"></div>
+                <h3 class="book-title display" id="bookTitle"></h3>
+                <p class="book-description" id="bookDescription"></p>
+                <div class="book-meta" id="bookMeta"></div>
+              </section>
+              <section class="book-page book-visual" id="bookVisual"></section>
+            </article>
           </div>
-          <div class="case-detail" id="caseDetail">
-            <div class="meta text-slate-500 mb-2">product</div>
-            <p class="copy">Show that I can transfer a real product into a new image while keeping the important details believable.</p>
+          <button class="book-expand meta" id="bookExpand" type="button" aria-pressed="false">expand</button>
+          <div class="book-controls">
+            <button class="book-arrow" id="bookPrev" type="button" aria-label="Previous page">&#8592;</button>
+            <div class="book-progress" aria-hidden="true"><span id="bookProgress"></span></div>
+            <button class="book-arrow" id="bookNext" type="button" aria-label="Next page">&#8594;</button>
+            <div class="book-count meta" id="bookCount"></div>
           </div>
-        </article>
-        <div class="case-visual" aria-label="product to campaign AI visual system">
-          <div class="campaign-frame one" id="frameOne"></div>
-          <div class="campaign-frame two" id="frameTwo"></div>
-          <div class="campaign-frame three" id="frameThree"></div>
+          <p class="book-hint meta">choose a chapter / arrows turn pages</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="process" class="section">
-    <div class="inner">
-      <div class="split">
-        <div>
-          <div class="section-label meta">03 / atelier method</div>
-          <h2 class="h2 display">from product to <span class="red">world</span></h2>
-        </div>
-        <p class="copy">A simple sequence for controlled AI production: read the object, define the mood, generate options, edit hard, and turn the result into usable formats.</p>
-      </div>
-      <div class="process-grid">
-        <aside class="receipt" id="receipt">
-          <div class="meta text-slate-500">atelier receipt</div>
-          <h3 class="accent text-4xl mt-5 mb-6">Product Read</h3>
-          <p class="copy">Study the product, material, proportions, brand codes, and the details that cannot get lost.</p>
-          <div class="receipt-row"><span class="meta text-slate-500">current line</span><span class="accent">01 / 05</span></div>
-          <div class="receipt-row"><span class="meta text-slate-500">goal</span><span class="accent">recognizable product</span></div>
-        </aside>
-        <div class="rail">
-          <div class="rail-progress" id="railProgress"></div>
-          <div class="rail-step active" data-title="Product Read" data-index="01 / 05" data-goal="recognizable product" data-copy="Study the product, material, proportions, brand codes, and the details that cannot get lost."><span class="meta text-slate-500">01</span><h3 class="accent">Product Read</h3><p class="copy">Start with the object, not the effect.</p></div>
-          <div class="rail-step" data-title="Visual World" data-index="02 / 05" data-goal="clear atmosphere" data-copy="Choose the setting, light, styling, references, palette, and campaign mood around the product."><span class="meta text-slate-500">02</span><h3 class="accent">Visual World</h3><p class="copy">Build a scene that supports the product instead of swallowing it.</p></div>
-          <div class="rail-step" data-title="AI Production" data-index="03 / 05" data-goal="controlled options" data-copy="Generate product scenes, catalog frames, campaign variations, and social-first formats."><span class="meta text-slate-500">03</span><h3 class="accent">AI Production</h3><p class="copy">Create options with a clear use case for each image.</p></div>
-          <div class="rail-step" data-title="Retouch & Edit" data-index="04 / 05" data-goal="taste filter" data-copy="Check product accuracy, remove AI artifacts, refine composition, and select only the strongest frames."><span class="meta text-slate-500">04</span><h3 class="accent">Retouch & Edit</h3><p class="copy">The edit is where AI output becomes portfolio work.</p></div>
-          <div class="rail-step" data-title="Rollout System" data-index="05 / 05" data-goal="usable assets" data-copy="Turn the direction into website images, marketplace cards, social posts, motion ideas, and campaign formats."><span class="meta text-slate-500">05</span><h3 class="accent">Rollout System</h3><p class="copy">Make the image direction usable across channels.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="packages" class="section packages">
-    <div class="inner">
-      <div class="split">
-        <div>
-          <div class="section-label meta">04 / service menu</div>
-          <h2 class="h2 display">ways to <span class="red">work</span></h2>
-        </div>
-        <p class="copy">A simple menu for how the portfolio can be read: product accuracy, selling images, campaign atmosphere, social formats, and motion.</p>
-      </div>
-      <div class="service-menu">
-        <div class="package"><span class="meta text-slate-500">product</span><h3 class="accent">Product Transfer Test</h3><p class="copy">A focused proof that a real item can move into AI scenes without losing identity.</p></div>
-        <div class="package"><span class="meta text-slate-500">catalog</span><h3 class="accent">Catalog Image Set</h3><p class="copy">Product cards, website visuals, marketplace images, and clean catalog-style frames.</p></div>
-        <div class="package"><span class="meta text-slate-500">campaign</span><h3 class="accent">Fashion / Beauty Campaign</h3><p class="copy">Campaign concept, art direction, AI shoot, launch visuals, outdoor and digital ad formats.</p></div>
-        <div class="package"><span class="meta text-slate-500">social</span><h3 class="accent">Social Content Kit</h3><p class="copy">UGC-style ideas, carousels, story templates, short-form concepts, and channel-ready visuals.</p></div>
-        <div class="package"><span class="meta text-slate-500">motion</span><h3 class="accent">AI Video / Motion</h3><p class="copy">Image animation, product movement, short ads, and motion tests for campaign assets.</p></div>
-        <div class="package"><span class="meta text-slate-500">free</span><h3 class="accent">Creative Lab</h3><p class="copy">Unbriefed visual experiments that show taste, references, styling, and personal ideas.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="thinking" class="section thinking">
-    <div class="inner">
-      <div class="split">
-        <div>
-          <div class="section-label meta text-slate-400">05 / philosophy</div>
-          <h2 class="h2 display">how I <span class="red">think</span></h2>
-        </div>
-        <p class="copy">The portfolio should prove control first, then taste. A beautiful image is not enough if the product, format, or brand use case disappears.</p>
-      </div>
-      <div class="principles">
-        <div class="principle"><span class="meta text-slate-400">01</span><h3 class="accent">Product accuracy first</h3><p>The item has to stay readable: shape, scale, texture, and details matter.</p></div>
-        <div class="principle"><span class="meta text-slate-400">02</span><h3 class="accent">AI needs direction</h3><p>I use AI with references, constraints, and editing, not random generation.</p></div>
-        <div class="principle"><span class="meta text-slate-400">03</span><h3 class="accent">Format changes the image</h3><p>A catalog card, campaign poster, story template, and video frame have different jobs.</p></div>
-        <div class="principle"><span class="meta text-slate-400">04</span><h3 class="accent">Free work shows taste</h3><p>Unbriefed experiments show my visual instincts, styling logic, and point of view.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="appointment" class="section">
-    <div class="inner appointment-grid">
-      <div>
-        <div class="section-label meta">06 / private appointment</div>
-        <h2 class="contact-heading display">let's build the <span class="red">image system.</span></h2>
-        <a class="contact-email magnetic display" href="mailto:ruazelena@gmail.com">ruazelena@gmail.com</a>
-      </div>
-      <aside class="slip">
-        <div class="meta text-slate-500">appointment note</div>
-        <p class="copy mt-8">Have a fashion, beauty, lifestyle, or product idea that needs stronger AI visuals? I can help shape the product scene, catalog images, campaign direction, social content, or motion concept.</p>
-        <div class="slip-line"><span class="meta text-slate-500">available</span><span class="accent text-2xl">internships / freelance / collaborations</span></div>
-        <div class="slip-line"><span class="meta text-slate-500">based</span><span class="accent text-2xl">Boston / remote</span></div>
+  <section id="method" class="section method">
+    <div class="inner method-grid">
+      <aside class="method-panel reveal" id="methodPanel" data-step="01">
+        <div class="section-label meta">02 / method in motion</div>
+        <h2 class="method-active-title display" id="methodActiveTitle">Read the object</h2>
+        <p class="method-active-copy" id="methodActiveCopy">I identify the form, material, details and brand codes that must stay unmistakably intact.</p>
       </aside>
+      <div class="method-steps reveal" id="methodSteps">
+        <button class="method-step is-active" type="button" data-step="01" data-title="Read the object" data-copy="I identify the form, material, details and brand codes that must stay unmistakably intact.">
+          <span class="method-step-number meta">01</span><span><span class="method-step-title">Read the object</span><span class="method-step-copy">Shape, surface, proportions and the visual codes worth protecting.</span></span>
+        </button>
+        <button class="method-step" type="button" data-step="02" data-title="Direct the world" data-copy="I define the visual tension: casting, light, setting, styling and the exact role of every frame.">
+          <span class="method-step-number meta">02</span><span><span class="method-step-title">Direct the world</span><span class="method-step-copy">A clear image system before generation begins.</span></span>
+        </button>
+        <button class="method-step" type="button" data-step="03" data-title="Generate &amp; refine" data-copy="I test, compare and refine until the product and the atmosphere feel intentional rather than merely possible.">
+          <span class="method-step-number meta">03</span><span><span class="method-step-title">Generate &amp; refine</span><span class="method-step-copy">Iteration guided by taste, continuity and product accuracy.</span></span>
+        </button>
+        <button class="method-step" type="button" data-step="04" data-title="Edit for use" data-copy="I shape the strongest material into a coherent set for commerce, campaign, social, outdoor or motion.">
+          <span class="method-step-number meta">04</span><span><span class="method-step-title">Edit for use</span><span class="method-step-copy">One visual idea translated across the formats it needs to inhabit.</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="inner about-grid reveal">
+      <div>
+        <div class="section-label meta">03 / about</div>
+        <h2 class="about-statement display">I direct the image before I generate it.</h2>
+      </div>
+      <div class="about-copy">
+        <p class="copy">I am Elena Riazanova, a Boston-based marketer and creative working in content and art direction for luxury and lifestyle brands. I move between strategy and craft: audience and idea first, then the social, campaign and motion system that carries them.</p>
+        <p class="copy">My case studies are self-initiated. I define the brand problem and who it speaks to, build the references, produce the visuals and motion, then edit everything into the formats a real campaign needs — social, catalog, campaign and identity. AI is one of the tools I direct, not the point.</p>
+        <div>
+          <div class="cap-label meta">capabilities</div>
+          <div class="tools"><span>Content strategy</span><span>Social &amp; content calendars</span><span>Integrated marketing (IMC)</span><span>SEO copywriting</span><span>Creative &amp; art direction</span><span>Campaign concepts</span><span>Short-form motion</span><span>Brand identity</span></div>
+        </div>
+        <div>
+          <div class="cap-label meta" style="margin-top:22px">tools</div>
+          <div class="tools"><span>HubSpot</span><span>Canva</span><span>Adobe Express</span><span>CapCut</span><span>Higgsfield</span><span>Runway</span><span>Veo 3.1</span><span>FLUX.2</span><span>ChatGPT</span><span>Gemini</span><span>Kling</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="inner">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label meta">04 / selected experience</div>
+          <h2 class="h2 display">marketing work behind the <span class="accent" style="color:var(--pink)">image.</span></h2>
+        </div>
+        <div>
+          <p class="copy">A compact note of real context: content strategy, live media environments, event promotion and student marketing work.</p>
+        </div>
+      </div>
+
+      <div class="experience-list reveal">
+        <article class="xp">
+          <div class="xp-date meta">Sep 2025 — Present / Boston, MA</div>
+          <h3 class="xp-role">Integrated Marketing Communications — Team Member</h3>
+          <div class="xp-org">Suffolk in the Hub / Student Marketing Agency</div>
+          <p class="xp-copy">Contribute to full-funnel content across blog, social and email. Write SEO-optimized long-form pieces in HubSpot, build monthly content calendars and support channel copy in Canva and Adobe Express.</p>
+        </article>
+        <article class="xp">
+          <div class="xp-date meta">Apr 2026 / Boston, MA</div>
+          <h3 class="xp-role">Press &amp; Media Volunteer — 130th Boston Marathon</h3>
+          <div class="xp-org">Boston Athletic Association</div>
+          <p class="xp-copy">Supported press and media operations at the Fairmont Copley Plaza press hub, including credentialing, live-event coordination and on-site support under race-day deadlines.</p>
+        </article>
+        <article class="xp">
+          <div class="xp-date meta">Sep 2025 — Present / Boston, MA</div>
+          <h3 class="xp-role">Head of Entertainment &amp; Events</h3>
+          <div class="xp-org">Russian Speaking Club, Suffolk University</div>
+          <p class="xp-copy">Plan cultural and social events for the student community, managing scheduling, venue logistics and promotional materials across digital posters and Instagram graphics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="inner contact-grid reveal">
+      <div>
+        <div class="section-label meta" style="color:var(--mint)">05 / contact</div>
+        <h2 class="display">let's make the image <span class="accent" style="color:var(--red-soft)">specific.</span></h2>
+        <a class="contact-email" href="mailto:ruazelena@gmail.com">ruazelena@gmail.com</a>
+      </div>
+      <nav class="socials" aria-label="Social links">
+        <a href="https://www.instagram.com/cutlinx/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span aria-hidden="true">↗</span></a>
+        <a href="https://www.linkedin.com/in/elenariazanova" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
   </section>
 </main>
 
+<footer class="footer meta">
+  <span>Open to marketing internships / luxury &amp; lifestyle preferred</span>
+  <span>Portfolio / 2026</span>
+</footer>
+
 <script>
 (() => {
-  const lenis = window.Lenis ? new Lenis({ lerp: .08, wheelMultiplier: .9 }) : null;
-  function raf(time) {
-    if (lenis) lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+  const books = [
+    {
+      name: 'Van Cleef & Arpels',
+      accent: '#A1E5DA',
+      pages: [
+        { layout: 'cover', kicker: '01 / cover', title: 'Architecture of Air', description: 'A study in pale stone, moving light and quiet precision.', meta: ['unofficial concept study'], type: 'image', src: 'assets/works/vca-cover.jpg', fit: 'cover', position: '50% 50%', alt: 'Van Cleef and Arpels logo cover image on pale blue background' },
+        { layout: 'idea', kicker: '02 / the idea', title: 'The motif becomes space', description: 'Light. Reflection. Stone. Silence.', meta: ['campaign world'], type: 'image', src: 'assets/works/vca-architecture.jpg', fit: 'cover', position: '50% 45%', alt: 'Sweet Alhambra watch placed in a carved stone niche with water reflection' },
+        { layout: 'stillness', kicker: '03 / campaign world', title: 'Stillness', description: 'The watch appears as a small architectural object, held by air.', meta: ['product as object'], type: 'image', src: 'assets/works/vca-hero.jpg', fit: 'cover', position: '50% 45%', alt: 'Sweet Alhambra watch concept in a pale carved architectural niche with water reflection' },
+        { layout: 'human', kicker: '04 / human moment', title: 'Light on skin', description: 'A softer frame. The motif returns as shadow.', meta: ['wrist styling'], type: 'image', src: 'assets/works/vca-wrist.jpg', fit: 'cover', position: '58% 50%', alt: 'Wrist wearing a Sweet Alhambra inspired watch beside carved light and shadow' },
+        { layout: 'material', kicker: '05 / material', title: 'Quiet precision', description: 'Macro first. Product second. The detail carries the value.', meta: ['macro', 'product'], type: 'material', first: 'assets/works/vca-macro.jpg', second: 'assets/works/vca-product.jpg', firstFit: 'cover', secondFit: 'contain', firstPosition: '50% 50%', secondPosition: '50% 50%', firstLabel: 'macro', secondLabel: 'product', firstAlt: 'Macro detail of Sweet Alhambra watch face and jewelry links', secondAlt: 'Sweet Alhambra watch product image on pale blue background' },
+        { layout: 'film', kicker: '06 / film', title: 'Film', description: '12-second campaign film.', meta: [], type: 'video', src: 'assets/works/vca-full-film.mp4', poster: 'assets/works/vca-cover.jpg', fit: 'contain', position: '50% 50%', preload: 'metadata', label: 'Architecture of Air luxury jewelry short film concept' },
+        { layout: 'contact', kicker: '07 / campaign system', title: 'Campaign Frames', description: 'Campaign imagery. Material study. Short-form film. Social launch assets.', meta: ['contact sheet'], type: 'campaignGrid', items: [
+          { src: 'assets/works/vca-architecture.jpg', label: 'reflection', fit: 'cover', position: '50% 45%', alt: 'Campaign frame with Sweet Alhambra watch in carved architecture and reflection' },
+          { src: 'assets/works/vca-wrist.jpg', label: 'hand', fit: 'cover', position: '58% 50%', alt: 'Campaign frame of watch on wrist with carved light shadows' },
+          { src: 'assets/works/vca-macro.jpg', label: 'macro', fit: 'cover', position: '50% 50%', alt: 'Macro frame of watch face and jewelry details' },
+          { src: 'assets/works/vca-product.jpg', label: 'product', fit: 'contain', position: '50% 50%', alt: 'Product frame of full Sweet Alhambra watch on blue background' }
+        ] }
+      ]
+    },
+    {
+      name: 'Product Fidelity',
+      accent: '#D962A7',
+      pages: [
+        { kicker: '02 / fidelity study', title: 'The bag, translated', description: 'A compact accuracy test: one product carried into a new editorial setting while key details remain legible.', meta: ['source', 'result', 'protected details'], type: 'pair', first: 'assets/works/bag-before.jpg', second: 'assets/works/bag-campaign.jpg', firstAlt: 'Original black leather bag product image', secondAlt: 'Black leather bag transferred into an evening street campaign image' },
+        { kicker: '02 / fidelity study', title: 'Black & gold transfer', description: 'A garment study focused on silhouette, ornament and proportion.', meta: ['source', 'result'], type: 'pair', first: 'assets/works/dress-before-2.jpg', second: 'assets/works/dress-after-2.png', firstAlt: 'Source black and gold dress', secondAlt: 'Transferred black and gold dress on a new model' }
+      ]
+    },
+    {
+      name: 'Creative Lab',
+      accent: '#5384B8',
+      pages: [
+        { kicker: '03 / editorial study', title: 'Platform character', description: 'A personal visual test where place, movement and attitude carry the frame.', meta: ['personal work', 'editorial'], type: 'image', src: 'assets/works/creative-subway.jpg', alt: 'Street fashion portrait beside a London Underground train' },
+        { kicker: '03 / composition', title: 'City angle', description: 'A composition study in perspective, flash and controlled distance.', meta: ['personal work', 'composition'], type: 'image', src: 'assets/works/creative-street-angle.jpg', alt: 'Fashion portrait photographed from an elevated street angle' }
+      ]
+    }
+  ];
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", e => {
-      const target = document.querySelector(link.getAttribute("href"));
-      if (!target) return;
-      e.preventDefault();
-      lenis ? lenis.scrollTo(target) : target.scrollIntoView({ behavior: "smooth" });
-    });
-  });
+  const shell = document.getElementById('libraryShell');
+  const nav = document.getElementById('bookNav');
+  const spread = document.getElementById('bookSpread');
+  const category = document.getElementById('bookCategory');
+  const kicker = document.getElementById('bookKicker');
+  const title = document.getElementById('bookTitle');
+  const description = document.getElementById('bookDescription');
+  const meta = document.getElementById('bookMeta');
+  const visual = document.getElementById('bookVisual');
+  const count = document.getElementById('bookCount');
+  const progress = document.getElementById('bookProgress');
+  const prevButton = document.getElementById('bookPrev');
+  const nextButton = document.getElementById('bookNext');
+  const expandButton = document.getElementById('bookExpand');
+  const bookColumn = shell.querySelector('.book-column');
+  let bookIndex = 0;
+  let pageIndex = 0;
 
-  document.querySelectorAll(".magnetic").forEach(el => {
-    el.addEventListener("mousemove", e => {
-      const r = el.getBoundingClientRect();
-      el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .17}px, ${(e.clientY - r.top - r.height / 2) * .2}px)`;
-    });
-    el.addEventListener("mouseleave", () => { el.style.transform = ""; });
-  });
-
-  const hero = document.querySelector(".hero-main");
-  const heroName = document.getElementById("heroName");
-  hero.addEventListener("mousemove", e => {
-    const r = hero.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - .5;
-    const py = (e.clientY - r.top) / r.height - .5;
-    heroName.style.transform = `translate(${px * 18}px, ${py * 10}px)`;
-  });
-  hero.addEventListener("mouseleave", () => { heroName.style.transform = ""; });
-
-  const visualSvg = (bg, line, accent, label) => {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${bg}"/><stop offset="1" stop-color="#F8FBFF"/></linearGradient>
-        <radialGradient id="r" cx=".34" cy=".32" r=".52"><stop stop-color="#fff" stop-opacity=".72"/><stop offset=".62" stop-color="${accent}" stop-opacity=".16"/><stop offset="1" stop-color="${bg}" stop-opacity=".04"/></radialGradient>
-      </defs>
-      <rect width="900" height="1200" fill="url(#g)"/>
-      <rect x="72" y="88" width="756" height="1024" fill="url(#r)" stroke="${line}" stroke-width="2"/>
-      <path d="M165 795 C315 560 492 535 730 710" fill="none" stroke="${accent}" stroke-width="26" stroke-linecap="round" opacity=".78"/>
-      <path d="M185 470 C300 365 520 350 707 465" fill="none" stroke="${line}" stroke-width="6" opacity=".48"/>
-      <circle cx="620" cy="315" r="118" fill="${accent}" opacity=".16"/>
-      <text x="92" y="154" fill="${line}" font-family="Fraunces" font-size="26" letter-spacing="9">${label}</text>
-      <text x="92" y="1072" fill="${line}" font-family="Fraunces" font-size="22" letter-spacing="7">PRODUCT TO CAMPAIGN SYSTEM</text>
-    </svg>`;
-    return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+  const mediaStyle = (fit, position) => `--media-fit:${fit || 'contain'};--media-position:${position || '50% 50%'}`;
+  const renderVisual = page => {
+    if (page.type === 'pair') {
+      return `<div class="book-pair"><figure><img src="${page.first}" alt="${page.firstAlt}" loading="lazy"><figcaption class="visual-label">source</figcaption></figure><figure><img src="${page.second}" alt="${page.secondAlt}" loading="lazy"><figcaption class="visual-label">result</figcaption></figure></div>`;
+    }
+    if (page.type === 'duo') {
+      return `<div class="book-duo"><figure><img src="${page.first}" alt="${page.firstAlt}" loading="lazy" style="${mediaStyle(page.firstFit, page.firstPosition)}"><figcaption class="visual-label">${page.firstLabel}</figcaption></figure><figure><img src="${page.second}" alt="${page.secondAlt}" loading="lazy" style="${mediaStyle(page.secondFit, page.secondPosition)}"><figcaption class="visual-label">${page.secondLabel}</figcaption></figure></div>`;
+    }
+    if (page.type === 'material') {
+      return `<div class="material-study"><figure><img src="${page.first}" alt="${page.firstAlt}" loading="lazy" style="${mediaStyle(page.firstFit, page.firstPosition)}"><figcaption class="visual-label">${page.firstLabel}</figcaption></figure><figure><img src="${page.second}" alt="${page.secondAlt}" loading="lazy" style="${mediaStyle(page.secondFit, page.secondPosition)}"><figcaption class="visual-label">${page.secondLabel}</figcaption></figure></div>`;
+    }
+    if (page.type === 'video') {
+      const playback = `${page.loop ? ' loop' : ''}${page.autoplay ? ' autoplay' : ''}`;
+      return `<div class="video-frame"><video class="book-media" src="${page.src}" poster="${page.poster}" muted playsinline preload="${page.preload || 'metadata'}"${playback} aria-label="${page.label}" style="${mediaStyle(page.fit, page.position)}"></video><button class="video-play" type="button" aria-label="Play film"></button></div>`;
+    }
+    if (page.type === 'zoomImage') {
+      return `<figure class="book-zoom"><img src="${page.src}" alt="${page.alt}" loading="lazy" style="${mediaStyle(page.fit, page.position)}"><figcaption class="visual-label">hover to inspect</figcaption></figure>`;
+    }
+    if (page.type === 'campaignGrid') {
+      return `<div class="campaign-grid">${page.items.map(item => `<figure><img src="${item.src}" alt="${item.alt}" loading="lazy" style="${mediaStyle(item.fit, item.position)}"><figcaption class="visual-label">${item.label}</figcaption></figure>`).join('')}</div>`;
+    }
+    return `<img class="book-media" src="${page.src}" alt="${page.alt}" loading="lazy" style="${mediaStyle(page.fit, page.position)}">`;
   };
-  document.getElementById("frameOne").style.backgroundImage = visualSvg("#DCEBFA", "#1A4373", "#5384B8", "PRODUCT");
-  document.getElementById("frameTwo").style.backgroundImage = visualSvg("#F8FBFF", "#1A4373", "#BFA3E5", "CATALOG");
-  document.getElementById("frameThree").style.backgroundImage = visualSvg("#ECF5FF", "#1A4373", "#A1E5DA", "MOTION");
 
-  const details = {
-    product: ["product", "Show that I can transfer a real product into a new image while keeping the important details believable."],
-    catalog: ["catalog", "Create clean selling images: product cards, marketplace frames, website visuals, and catalog-style sets."],
-    campaign: ["campaign", "Build full fashion and beauty worlds for launches, collection stories, outdoor ads, and digital campaign assets."],
-    social: ["social", "Turn the direction into UGC-style ideas, carousels, story templates, Reels/TikTok angles, and content systems."],
-    video: ["video", "Animate images into short ad films, product motion, loopable campaign moments, and motion experiments."],
-    free: ["free work", "Use unbriefed work to show taste, visual references, styling logic, and a more personal creative point of view."]
+  const animateTurn = () => {
+    spread.classList.remove('is-turning');
+    void spread.offsetWidth;
+    spread.classList.add('is-turning');
   };
-  const caseDetail = document.getElementById("caseDetail");
-  document.querySelectorAll(".case-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".case-tab").forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-      const d = details[tab.dataset.case];
-      caseDetail.innerHTML = `<div class="meta text-slate-500 mb-2">${d[0]}</div><p class="copy">${d[1]}</p>`;
-    });
-  });
 
-  const receipt = document.getElementById("receipt");
-  const progress = document.getElementById("railProgress");
-  document.querySelectorAll(".rail-step").forEach((step, i, arr) => {
-    step.addEventListener("mouseenter", () => setStep(step, i, arr.length));
-    step.addEventListener("click", () => setStep(step, i, arr.length));
-  });
-  function setStep(step, i, total) {
-    document.querySelectorAll(".rail-step").forEach(s => s.classList.remove("active"));
-    step.classList.add("active");
-    progress.style.height = `${((i + 1) / total) * 100}%`;
-    receipt.innerHTML = `
-      <div class="meta text-slate-500">atelier receipt</div>
-      <h3 class="accent text-4xl mt-5 mb-6">${step.dataset.title}</h3>
-      <p class="copy">${step.dataset.copy}</p>
-      <div class="receipt-row"><span class="meta text-slate-500">current line</span><span class="accent">${step.dataset.index}</span></div>
-      <div class="receipt-row"><span class="meta text-slate-500">goal</span><span class="accent">${step.dataset.goal}</span></div>`;
-  }
-
-  document.querySelectorAll(".case-copy, .case-visual, .package, .principle, .slip").forEach(card => {
-    card.addEventListener("mousemove", e => {
-      const r = card.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - .5;
-      const py = (e.clientY - r.top) / r.height - .5;
-      card.style.transform = `perspective(1000px) rotateX(${-py * 4.5}deg) rotateY(${px * 4.5}deg) translateY(-4px)`;
-    });
-    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
-  });
-
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(".hero-visual", { opacity: 0, y: 26, scale: .96 }, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 1.1,
-      delay: .18,
-      ease: "power3.out"
-    });
-
-    gsap.utils.toArray(".section").forEach(sec => {
-      gsap.fromTo(sec, { opacity: .2, rotationX: 12, z: -80, transformPerspective: 1600, transformOrigin: "50% 0%" }, {
-        opacity: 1, rotationX: 0, z: 0, ease: "none",
-        scrollTrigger: { trigger: sec, start: "top 92%", end: "top 48%", scrub: .8 }
+  const renderBook = (animate = true) => {
+    const book = books[bookIndex];
+    const page = book.pages[pageIndex];
+    if (animate) animateTurn();
+    spread.dataset.layout = page.layout || 'standard';
+    shell.style.setProperty('--book-accent', book.accent);
+    category.textContent = `${String(bookIndex + 1).padStart(2, '0')} / ${book.name}`;
+    kicker.textContent = page.kicker;
+    title.textContent = page.title;
+    description.textContent = page.description;
+    meta.innerHTML = (page.meta || []).map(item => `<span>${item}</span>`).join('');
+    visual.innerHTML = renderVisual(page);
+    const zoomImage = visual.querySelector('.book-zoom');
+    if (zoomImage) {
+      zoomImage.addEventListener('mousemove', event => {
+        const rect = zoomImage.getBoundingClientRect();
+        zoomImage.style.setProperty('--zoom-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+        zoomImage.style.setProperty('--zoom-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
       });
+    }
+    const videoFrame = visual.querySelector('.video-frame');
+    if (videoFrame) {
+      const video = videoFrame.querySelector('video');
+      const playButton = videoFrame.querySelector('.video-play');
+      playButton.addEventListener('click', () => {
+        video.controls = true;
+        video.play();
+      });
+      video.addEventListener('play', () => videoFrame.classList.add('is-playing'));
+      video.addEventListener('pause', () => {
+        if (!video.controls) videoFrame.classList.remove('is-playing');
+      });
+    }
+    count.textContent = `${String(pageIndex + 1).padStart(2, '0')} / ${String(book.pages.length).padStart(2, '0')}`;
+    progress.style.width = `${((pageIndex + 1) / book.pages.length) * 100}%`;
+    prevButton.disabled = bookIndex === 0 && pageIndex === 0;
+    nextButton.disabled = bookIndex === books.length - 1 && pageIndex === book.pages.length - 1;
+    nav.querySelectorAll('.book-tab').forEach((tab, index) => tab.setAttribute('aria-selected', index === bookIndex ? 'true' : 'false'));
+  };
+
+  const selectBook = index => {
+    if (index === bookIndex) return;
+    bookIndex = index;
+    pageIndex = 0;
+    renderBook();
+  };
+
+  books.forEach((book, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'book-tab';
+    button.setAttribute('role', 'tab');
+    button.innerHTML = `<span class="book-tab-number meta">${String(index + 1).padStart(2, '0')}</span><span class="book-tab-name">${book.name}</span><span class="book-tab-state" aria-hidden="true">&#8594;</span>`;
+    button.addEventListener('click', () => selectBook(index));
+    nav.appendChild(button);
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (pageIndex > 0) {
+      pageIndex -= 1;
+    } else if (bookIndex > 0) {
+      bookIndex -= 1;
+      pageIndex = books[bookIndex].pages.length - 1;
+    } else {
+      return;
+    }
+    renderBook();
+  });
+  nextButton.addEventListener('click', () => {
+    if (pageIndex < books[bookIndex].pages.length - 1) {
+      pageIndex += 1;
+    } else if (bookIndex < books.length - 1) {
+      bookIndex += 1;
+      pageIndex = 0;
+    } else {
+      return;
+    }
+    renderBook();
+  });
+  document.getElementById('bookStage').addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    (event.key === 'ArrowLeft' ? prevButton : nextButton).click();
+  });
+  const setExpanded = expanded => {
+    shell.classList.toggle('is-expanded', expanded);
+    document.body.classList.toggle('body-no-scroll', expanded);
+    expandButton.setAttribute('aria-pressed', expanded ? 'true' : 'false');
+    expandButton.textContent = expanded ? 'close' : 'expand';
+  };
+  expandButton.addEventListener('click', () => setExpanded(!shell.classList.contains('is-expanded')));
+  document.addEventListener('keydown', event => {
+    if (!shell.classList.contains('is-expanded')) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setExpanded(false);
+      return;
+    }
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    (event.key === 'ArrowLeft' ? prevButton : nextButton).click();
+  });
+  const bookStage = document.getElementById('bookStage');
+  bookStage.tabIndex = 0;
+  let touchStartX = 0;
+  bookStage.addEventListener('touchstart', event => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+  bookStage.addEventListener('touchend', event => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) < 52) return;
+    (distance > 0 ? prevButton : nextButton).click();
+  }, { passive: true });
+  renderBook(false);
+
+  const methodPanel = document.getElementById('methodPanel');
+  const methodTitle = document.getElementById('methodActiveTitle');
+  const methodCopy = document.getElementById('methodActiveCopy');
+  const methodSteps = [...document.querySelectorAll('.method-step')];
+  const activateMethod = step => {
+    methodSteps.forEach(item => item.classList.toggle('is-active', item === step));
+    methodPanel.dataset.step = step.dataset.step;
+    methodTitle.textContent = step.dataset.title;
+    methodCopy.textContent = step.dataset.copy;
+  };
+  methodSteps.forEach(step => {
+    step.addEventListener('mouseenter', () => activateMethod(step));
+    step.addEventListener('focus', () => activateMethod(step));
+    step.addEventListener('click', () => activateMethod(step));
+  });
+  const methodObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) activateMethod(entry.target); });
+  }, { rootMargin: '-28% 0px -48% 0px', threshold: .15 });
+  methodSteps.forEach(step => methodObserver.observe(step));
+
+  const primaryLinks = [...document.querySelectorAll('.nav-links a')];
+  const linkedSections = primaryLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      primaryLinks.forEach(link => link.classList.toggle('is-current', link.getAttribute('href') === `#${entry.target.id}`));
     });
+  }, { rootMargin: '-28% 0px -64% 0px', threshold: 0 });
+  linkedSections.forEach(section => navObserver.observe(section));
+
+  const hero = document.querySelector('.hero-main');
+  const heroName = document.getElementById('heroName');
+  const canHover = window.matchMedia('(hover: hover)').matches;
+
+  if (hero && heroName && canHover) {
+    hero.addEventListener('mousemove', event => {
+      const rect = hero.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - .5;
+      const y = (event.clientY - rect.top) / rect.height - .5;
+      heroName.style.transform = `translate(${x * 13}px, ${y * 7}px)`;
+    });
+    hero.addEventListener('mouseleave', () => { heroName.style.transform = ''; });
   }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
+
+  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 })();
 </script>
 </body>
