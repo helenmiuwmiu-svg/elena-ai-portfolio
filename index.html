@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Elena Riazanova | Content &amp; Creative Direction for Luxury</title>
-<meta name="description" content="Content and creative direction, social, campaign and motion for luxury and lifestyle brands by Elena Riazanova." />
-<meta property="og:title" content="Elena Riazanova | Content &amp; Creative Direction for Luxury" />
-<meta property="og:description" content="Content, campaign, motion and identity case studies for luxury and lifestyle brands." />
+<title>Elena Riazanova | Brand Worlds through Concept, Content and Image</title>
+<meta name="description" content="Brand worlds, campaign concepts, content systems and visual direction by Elena Riazanova." />
+<meta property="og:title" content="Elena Riazanova | Brand Worlds through Concept, Content and Image" />
+<meta property="og:description" content="Brand worlds, campaign concepts, content systems and visual direction." />
 <meta property="og:image" content="https://helenmiuwmiu-svg.github.io/elena-ai-portfolio/assets/works/vca-cover.jpg" />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -710,13 +710,17 @@ button:focus {
   .nav { padding-top: 16px; padding-bottom: 16px; }
   .nav-brand { font-size: 23px; }
   .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+  .section { padding-top: 76px; padding-bottom: 88px; scroll-margin-top: 86px; }
+  .section-head { gap: 26px; margin-bottom: 42px; }
   .hero { padding-top: 84px; }
   .hero-main { gap: 28px; }
   .hero-name { font-size: clamp(54px, 16.8vw, 66px); line-height: .88; }
-  .hero-position { max-width: 18ch; font-size: clamp(20px, 5.4vw, 23px); line-height: 1.08; }
+  .hero-position { max-width: 21ch; font-size: clamp(19px, 5.1vw, 23px); line-height: 1.1; }
   .hero-visual { width: min(45vw, 170px); height: 260px; justify-self: end; margin-top: -4px; }
+  .archive-line { white-space: normal; overflow: visible; }
+  .archive-line span { flex-wrap: wrap; gap: 8px 14px; }
   .archive-line span:nth-child(2) { display: none; }
-  .h2 { font-size: clamp(54px, 18vw, 86px); }
+  .h2 { font-size: clamp(46px, 15.6vw, 64px); line-height: .94; }
   .work-library { padding-left: 0; padding-right: 0; }
   .work-library .library-intro, .work-library .library-shell { padding-left: 18px; padding-right: 18px; }
   .book-tab { min-width: 155px; }
@@ -765,6 +769,9 @@ button:focus {
   .method-panel::after { font-size: 170px; bottom: -35px; }
   .method-active-title { margin: 50px 0 12px; font-size: 46px; }
   .method-step { min-height: 250px; grid-template-columns: 40px 1fr; }
+  .about-statement { font-size: clamp(42px, 13vw, 58px); line-height: .98; }
+  .xp-role { font-size: clamp(22px, 7vw, 28px); line-height: 1.04; }
+  .contact h2 { font-size: clamp(48px, 15vw, 68px); line-height: .94; }
   .footer { flex-direction: column; }
 }
 
@@ -791,7 +798,7 @@ button:focus {
     <div class="hero-main">
       <div>
         <h1 class="hero-name display" id="heroName">Elena<br>Riazanova</h1>
-        <p class="hero-position">Creative direction and visual content for <em>luxury</em> and lifestyle brands.</p>
+        <p class="hero-position">Building brand worlds through <em>concept</em>, content and image.</p>
       </div>
       <div class="hero-visual" aria-label="Portfolio receipt animation">
         <img class="hero-product" src="assets/hero-product-slot-once.gif" alt="Animated portfolio receipt" />
@@ -800,8 +807,8 @@ button:focus {
   </section>
 
   <div class="archive-line meta" aria-label="Portfolio focus areas">
-    <span>brand chapters <i class="archive-dot"></i> campaign systems <i class="archive-dot"></i> product fidelity <i class="archive-dot"></i> motion</span>
-    <span>independent work / ongoing</span>
+    <span>concept <i class="archive-dot"></i> image <i class="archive-dot"></i> content <i class="archive-dot"></i> motion</span>
+    <span>ideas in progress</span>
   </div>
 
   <section id="work" class="section work-library">
@@ -809,11 +816,11 @@ button:focus {
       <div class="section-head library-intro reveal">
         <div>
           <div class="section-label meta">01 / selected work</div>
-          <h2 class="h2 display">brand chapters, not just <span class="accent" style="color:var(--pink)">images.</span></h2>
+          <h2 class="h2 display">A few ideas I've been <span class="accent" style="color:var(--pink)">shaping.</span></h2>
         </div>
         <div>
-          <p class="copy">Choose a chapter, then turn the pages. The goal is a portfolio that reads like an archive of campaign thinking: concept, product accuracy, rollout logic and motion.</p>
-          <p class="note" style="margin-top:18px;color:rgba(236,245,255,.48)">All projects are self-initiated concept studies. Brand references are creative context; no affiliation is implied.</p>
+          <p class="copy">Choose a chapter.</p>
+          <p class="note" style="margin-top:18px;color:rgba(236,245,255,.48)">Concept studies and selected client work. Context is noted inside each chapter.</p>
         </div>
       </div>
       <div class="library-shell" id="libraryShell">
@@ -838,7 +845,7 @@ button:focus {
             <button class="book-arrow" id="bookNext" type="button" aria-label="Next page">&#8594;</button>
             <div class="book-count meta" id="bookCount"></div>
           </div>
-          <p class="book-hint meta">choose a chapter / arrows turn pages</p>
+          <p class="book-hint meta">arrows turn pages</p>
         </div>
       </div>
     </div>
@@ -847,22 +854,22 @@ button:focus {
   <section id="method" class="section method">
     <div class="inner method-grid">
       <aside class="method-panel reveal" id="methodPanel" data-step="01">
-        <div class="section-label meta">02 / method in motion</div>
-        <h2 class="method-active-title display" id="methodActiveTitle">Read the object</h2>
-        <p class="method-active-copy" id="methodActiveCopy">I identify the form, material, details and brand codes that must stay unmistakably intact.</p>
+        <div class="section-label meta">02 / how I think</div>
+        <h2 class="method-active-title display" id="methodActiveTitle">Find the tension</h2>
+        <p class="method-active-copy" id="methodActiveCopy">I start with what feels interesting in the brand, product, audience or moment.</p>
       </aside>
       <div class="method-steps reveal" id="methodSteps">
-        <button class="method-step is-active" type="button" data-step="01" data-title="Read the object" data-copy="I identify the form, material, details and brand codes that must stay unmistakably intact.">
-          <span class="method-step-number meta">01</span><span><span class="method-step-title">Read the object</span><span class="method-step-copy">Shape, surface, proportions and the visual codes worth protecting.</span></span>
+        <button class="method-step is-active" type="button" data-step="01" data-title="Find the tension" data-copy="I start with what feels interesting in the brand, product, audience or moment.">
+          <span class="method-step-number meta">01</span><span><span class="method-step-title">Find the tension</span><span class="method-step-copy">The detail, behavior or cultural cue worth building around.</span></span>
         </button>
-        <button class="method-step" type="button" data-step="02" data-title="Direct the world" data-copy="I define the visual tension: casting, light, setting, styling and the exact role of every frame.">
-          <span class="method-step-number meta">02</span><span><span class="method-step-title">Direct the world</span><span class="method-step-copy">A clear image system before generation begins.</span></span>
+        <button class="method-step" type="button" data-step="02" data-title="Build the world" data-copy="I collect the references, mood, visual codes and context before choosing a tool.">
+          <span class="method-step-number meta">02</span><span><span class="method-step-title">Build the world</span><span class="method-step-copy">References, atmosphere, environment and brand codes before execution begins.</span></span>
         </button>
-        <button class="method-step" type="button" data-step="03" data-title="Generate &amp; refine" data-copy="I test, compare and refine until the product and the atmosphere feel intentional rather than merely possible.">
-          <span class="method-step-number meta">03</span><span><span class="method-step-title">Generate &amp; refine</span><span class="method-step-copy">Iteration guided by taste, continuity and product accuracy.</span></span>
+        <button class="method-step" type="button" data-step="03" data-title="Make it specific" data-copy="I direct the styling, composition, casting, copy, detail and motion until the idea feels precise.">
+          <span class="method-step-number meta">03</span><span><span class="method-step-title">Make it specific</span><span class="method-step-copy">Creative direction through composition, copy, detail, motion and editing.</span></span>
         </button>
-        <button class="method-step" type="button" data-step="04" data-title="Edit for use" data-copy="I shape the strongest material into a coherent set for commerce, campaign, social, outdoor or motion.">
-          <span class="method-step-number meta">04</span><span><span class="method-step-title">Edit for use</span><span class="method-step-copy">One visual idea translated across the formats it needs to inhabit.</span></span>
+        <button class="method-step" type="button" data-step="04" data-title="Extend the idea" data-copy="I think about how the idea can adapt across campaign, social, motion, content and different formats.">
+          <span class="method-step-number meta">04</span><span><span class="method-step-title">Extend the idea</span><span class="method-step-copy">One idea, shaped consistently across the places where the brand appears.</span></span>
         </button>
       </div>
     </div>
@@ -872,18 +879,22 @@ button:focus {
     <div class="inner about-grid reveal">
       <div>
         <div class="section-label meta">03 / about</div>
-        <h2 class="about-statement display">I direct the image before I generate it.</h2>
+        <h2 class="about-statement display">I start with the idea, not the image.</h2>
       </div>
       <div class="about-copy">
-        <p class="copy">I am Elena Riazanova, a Boston-based marketer and creative working in content and art direction for luxury and lifestyle brands. I move between strategy and craft: audience and idea first, then the social, campaign and motion system that carries them.</p>
-        <p class="copy">My case studies are self-initiated. I define the brand problem and who it speaks to, build the references, produce the visuals and motion, then edit everything into the formats a real campaign needs — social, catalog, campaign and identity. AI is one of the tools I direct, not the point.</p>
+        <p class="copy">I am drawn to brands with a strong identity — the kind with a mood, a culture, a clear customer and a point of view.</p>
+        <p class="copy">I study Marketing at Suffolk University and work between strategy and visual craft: social content, campaign ideas, copy, motion and the tools that help produce them. AI is one of the production tools I use when it serves the idea.</p>
         <div>
           <div class="cap-label meta">capabilities</div>
-          <div class="tools"><span>Content strategy</span><span>Social &amp; content calendars</span><span>Integrated marketing (IMC)</span><span>SEO copywriting</span><span>Creative &amp; art direction</span><span>Campaign concepts</span><span>Short-form motion</span><span>Brand identity</span></div>
+          <div class="tools"><span>Social Media</span><span>Content Strategy</span><span>Campaign Concepts</span><span>Copywriting &amp; SEO</span><span>PR &amp; Media Relations</span><span>Visual Storytelling</span></div>
+        </div>
+        <div>
+          <div class="cap-label meta" style="margin-top:22px">education &amp; credentials</div>
+          <div class="tools"><span>B.S.B.A. Marketing / Suffolk University</span><span>Inside LVMH Certificate</span></div>
         </div>
         <div>
           <div class="cap-label meta" style="margin-top:22px">tools</div>
-          <div class="tools"><span>HubSpot</span><span>Canva</span><span>Adobe Express</span><span>CapCut</span><span>Higgsfield</span><span>Runway</span><span>Veo 3.1</span><span>FLUX.2</span><span>ChatGPT</span><span>Gemini</span><span>Kling</span></div>
+          <div class="tools"><span>HubSpot</span><span>Canva</span><span>Adobe Premiere Pro</span><span>CapCut</span><span>Runway</span><span>Higgsfield</span><span>Veo</span></div>
         </div>
       </div>
     </div>
@@ -894,31 +905,31 @@ button:focus {
       <div class="section-head reveal">
         <div>
           <div class="section-label meta">04 / selected experience</div>
-          <h2 class="h2 display">marketing work behind the <span class="accent" style="color:var(--pink)">image.</span></h2>
+          <h2 class="h2 display">A little <span class="accent" style="color:var(--pink)">context.</span></h2>
         </div>
         <div>
-          <p class="copy">A compact note of real context: content strategy, live media environments, event promotion and student marketing work.</p>
+          <p class="copy">A few places where I've put that thinking to work.</p>
         </div>
       </div>
 
       <div class="experience-list reveal">
         <article class="xp">
           <div class="xp-date meta">Sep 2025 — Present / Boston, MA</div>
-          <h3 class="xp-role">Integrated Marketing Communications — Team Member</h3>
-          <div class="xp-org">Suffolk in the Hub / Student Marketing Agency</div>
-          <p class="xp-copy">Contribute to full-funnel content across blog, social and email. Write SEO-optimized long-form pieces in HubSpot, build monthly content calendars and support channel copy in Canva and Adobe Express.</p>
+          <h3 class="xp-role">IMC Team Member / Social Media &amp; Content</h3>
+          <div class="xp-org">Suffolk in the Hub / Student-Run Marketing Agency</div>
+          <p class="xp-copy">Create client social content and carousel case studies for SAFE BVM, refine copy and hierarchy in Canva, review HubSpot performance and write SEO content. One article reached a 5:22 average read time per visitor.</p>
         </article>
         <article class="xp">
           <div class="xp-date meta">Apr 2026 / Boston, MA</div>
           <h3 class="xp-role">Press &amp; Media Volunteer — 130th Boston Marathon</h3>
           <div class="xp-org">Boston Athletic Association</div>
-          <p class="xp-copy">Supported press and media operations at the Fairmont Copley Plaza press hub, including credentialing, live-event coordination and on-site support under race-day deadlines.</p>
+          <p class="xp-copy">Supported international press credentialing, media access, broadcast zones and elite-athlete movement under live-event deadlines.</p>
         </article>
         <article class="xp">
           <div class="xp-date meta">Sep 2025 — Present / Boston, MA</div>
-          <h3 class="xp-role">Head of Entertainment &amp; Events</h3>
+          <h3 class="xp-role">Head of Entertainment &amp; Events / Incoming Vice President</h3>
           <div class="xp-org">Russian Speaking Club, Suffolk University</div>
-          <p class="xp-copy">Plan cultural and social events for the student community, managing scheduling, venue logistics and promotional materials across digital posters and Instagram graphics.</p>
+          <p class="xp-copy">Coordinate cultural and community events for a 50+ member student group, with logistics, cross-team communication and promotional materials across posters and Instagram graphics.</p>
         </article>
       </div>
     </div>
@@ -928,7 +939,7 @@ button:focus {
     <div class="inner contact-grid reveal">
       <div>
         <div class="section-label meta" style="color:var(--mint)">05 / contact</div>
-        <h2 class="display">let's make the image <span class="accent" style="color:var(--red-soft)">specific.</span></h2>
+        <h2 class="display">let's make the idea <span class="accent" style="color:var(--red-soft)">specific.</span></h2>
         <a class="contact-email" href="mailto:ruazelena@gmail.com">ruazelena@gmail.com</a>
       </div>
       <nav class="socials" aria-label="Social links">
@@ -940,7 +951,7 @@ button:focus {
 </main>
 
 <footer class="footer meta">
-  <span>Open to marketing internships / luxury &amp; lifestyle preferred</span>
+  <span>Open to marketing &amp; creative internships</span>
   <span>Portfolio / 2026</span>
 </footer>
 
@@ -948,16 +959,16 @@ button:focus {
 (() => {
   const books = [
     {
-      name: 'Van Cleef & Arpels',
+      name: 'Campaign Concepts',
       accent: '#A1E5DA',
       pages: [
-        { layout: 'cover', kicker: '01 / cover', title: 'Architecture of Air', description: 'A study in pale stone, moving light and quiet precision.', meta: ['unofficial concept study'], type: 'image', src: 'assets/works/vca-cover.jpg', fit: 'cover', position: '50% 50%', alt: 'Van Cleef and Arpels logo cover image on pale blue background' },
-        { layout: 'idea', kicker: '02 / the idea', title: 'The motif becomes space', description: 'Light. Reflection. Stone. Silence.', meta: ['campaign world'], type: 'image', src: 'assets/works/vca-architecture.jpg', fit: 'cover', position: '50% 45%', alt: 'Sweet Alhambra watch placed in a carved stone niche with water reflection' },
+        { layout: 'cover', kicker: '01 / cover', title: 'Architecture of Air', description: 'A Van Cleef & Arpels concept study in pale stone, moving light and quiet precision.', meta: ['Van Cleef & Arpels', 'unofficial concept study'], type: 'image', src: 'assets/works/vca-cover.jpg', fit: 'cover', position: '50% 50%', alt: 'Van Cleef and Arpels logo cover image on pale blue background' },
+        { layout: 'idea', kicker: '02 / the idea', title: 'The motif becomes space', description: 'The Alhambra motif becomes an architectural language — repeated through space, shadow and reflection.', meta: ['campaign world'], type: 'image', src: 'assets/works/vca-architecture.jpg', fit: 'cover', position: '50% 45%', alt: 'Sweet Alhambra watch placed in a carved stone niche with water reflection' },
         { layout: 'stillness', kicker: '03 / campaign world', title: 'Stillness', description: 'The watch appears as a small architectural object, held by air.', meta: ['product as object'], type: 'image', src: 'assets/works/vca-hero.jpg', fit: 'cover', position: '50% 45%', alt: 'Sweet Alhambra watch concept in a pale carved architectural niche with water reflection' },
         { layout: 'human', kicker: '04 / human moment', title: 'Light on skin', description: 'A softer frame. The motif returns as shadow.', meta: ['wrist styling'], type: 'image', src: 'assets/works/vca-wrist.jpg', fit: 'cover', position: '58% 50%', alt: 'Wrist wearing a Sweet Alhambra inspired watch beside carved light and shadow' },
         { layout: 'material', kicker: '05 / material', title: 'Quiet precision', description: 'Macro first. Product second. The detail carries the value.', meta: ['macro', 'product'], type: 'material', first: 'assets/works/vca-macro.jpg', second: 'assets/works/vca-product.jpg', firstFit: 'cover', secondFit: 'contain', firstPosition: '50% 50%', secondPosition: '50% 50%', firstLabel: 'macro', secondLabel: 'product', firstAlt: 'Macro detail of Sweet Alhambra watch face and jewelry links', secondAlt: 'Sweet Alhambra watch product image on pale blue background' },
         { layout: 'film', kicker: '06 / film', title: 'Film', description: '12-second campaign film.', meta: [], type: 'video', src: 'assets/works/vca-full-film.mp4', poster: 'assets/works/vca-cover.jpg', fit: 'contain', position: '50% 50%', preload: 'metadata', label: 'Architecture of Air luxury jewelry short film concept' },
-        { layout: 'contact', kicker: '07 / campaign system', title: 'Campaign Frames', description: 'Campaign imagery. Material study. Short-form film. Social launch assets.', meta: ['contact sheet'], type: 'campaignGrid', items: [
+        { layout: 'contact', kicker: '07 / the system', title: 'Campaign Frames', description: 'Campaign imagery. Material study. Short-form film. Social launch assets.', meta: ['contact sheet'], type: 'campaignGrid', items: [
           { src: 'assets/works/vca-architecture.jpg', label: 'reflection', fit: 'cover', position: '50% 45%', alt: 'Campaign frame with Sweet Alhambra watch in carved architecture and reflection' },
           { src: 'assets/works/vca-wrist.jpg', label: 'hand', fit: 'cover', position: '58% 50%', alt: 'Campaign frame of watch on wrist with carved light shadows' },
           { src: 'assets/works/vca-macro.jpg', label: 'macro', fit: 'cover', position: '50% 50%', alt: 'Macro frame of watch face and jewelry details' },
@@ -966,19 +977,39 @@ button:focus {
       ]
     },
     {
-      name: 'Product Fidelity',
-      accent: '#D962A7',
+      name: 'Social Carousels',
+      accent: '#7EB8E6',
       pages: [
-        { kicker: '02 / fidelity study', title: 'The bag, translated', description: 'A compact accuracy test: one product carried into a new editorial setting while key details remain legible.', meta: ['source', 'result', 'protected details'], type: 'pair', first: 'assets/works/bag-before.jpg', second: 'assets/works/bag-campaign.jpg', firstAlt: 'Original black leather bag product image', secondAlt: 'Black leather bag transferred into an evening street campaign image' },
-        { kicker: '02 / fidelity study', title: 'Black & gold transfer', description: 'A garment study focused on silhouette, ornament and proportion.', meta: ['source', 'result'], type: 'pair', first: 'assets/works/dress-before-2.jpg', second: 'assets/works/dress-after-2.png', firstAlt: 'Source black and gold dress', secondAlt: 'Transferred black and gold dress on a new model' }
+        { layout: 'cover', kicker: '01 / cover', title: 'Consistency When Every Breath Matters', description: 'A SAFE BVM / Sotair case-study carousel translating a technical fire-service story into clear, branded content.', meta: ['SAFE BVM / Sotair', 'social content', 'carousel'], type: 'image', src: 'assets/works/safe-bvm-01.png', fit: 'cover', position: '50% 50%', alt: 'SAFE BVM case study cover for Hoover Fire Department manual ventilation consistency' },
+        { layout: 'brief', kicker: '02 / the brief', title: 'From case study to social story', description: 'Turn a detailed customer story into a seven-slide Instagram carousel that stays technical, branded and easy to scan.', meta: ['content adaptation', 'copy hierarchy'], type: 'image', src: 'assets/works/safe-bvm-02.png', fit: 'contain', position: '50% 50%', alt: 'SAFE BVM carousel slide explaining the challenge of manual ventilation' },
+        { layout: 'system', kicker: '03 / the system', title: 'One story, seven frames', description: 'The source material becomes a simple narrative: problem, process, intervention and field outcome.', meta: ['carousel structure', 'visual hierarchy'], type: 'campaignGrid', items: [
+          { src: 'assets/works/safe-bvm-03.png', label: 'problem', fit: 'contain', position: '50% 50%', alt: 'Monitoring alone is not enough slide' },
+          { src: 'assets/works/safe-bvm-07.png', label: 'approach', fit: 'contain', position: '50% 50%', alt: 'A simple preventative approach slide' },
+          { src: 'assets/works/safe-bvm-06.png', label: 'outcome', fit: 'contain', position: '50% 50%', alt: 'More consistency less coaching case study slide' },
+          { src: 'assets/works/safe-bvm-05.png', label: 'field proof', fit: 'contain', position: '50% 50%', alt: 'Understood in minutes slide' }
+        ] },
+        { layout: 'format', kicker: '04 / built for the format', title: 'Designed around the layout', description: 'I directed the imagery around the carousel format: composition and negative space first, copy and hierarchy after.', meta: ['AI-assisted imagery', 'layout-aware composition'], type: 'duo', first: 'assets/works/safe-bvm-base-visual-replacement.png', second: 'assets/works/safe-bvm-04.png', firstFit: 'contain', secondFit: 'contain', firstPosition: '50% 50%', secondPosition: '50% 50%', firstLabel: 'base visual', secondLabel: 'finished slide', firstAlt: 'Generated SAFE BVM visual area before carousel copy and hierarchy were added', secondAlt: 'Finished SAFE BVM carousel slide with layout, copy and hierarchy' },
+        { layout: 'contact', kicker: '05 / complete story', title: 'The complete carousel', description: 'A compact view of the final sequence, built to move from attention to explanation to case-study proof.', meta: ['contact sheet'], type: 'zoomImage', src: 'assets/works/safe-bvm-contact-sheet.png', fit: 'contain', position: '50% 50%', alt: 'Contact sheet of SAFE BVM social carousel pages' },
+        { layout: 'role', kicker: '06 / my role', title: 'My role', description: 'Developed within Suffolk in the Hub for SAFE BVM: content adaptation, carousel structure, copy hierarchy and Canva production.', meta: ['Suffolk in the Hub', 'SAFE BVM'], type: 'image', src: 'assets/works/safe-bvm-05.png', fit: 'contain', position: '50% 50%', alt: 'SAFE BVM carousel slide showing that the product was understood in minutes' }
       ]
     },
     {
-      name: 'Creative Lab',
-      accent: '#5384B8',
+      name: 'Product Placement & Motion',
+      accent: '#D962A7',
       pages: [
-        { kicker: '03 / editorial study', title: 'Platform character', description: 'A personal visual test where place, movement and attitude carry the frame.', meta: ['personal work', 'editorial'], type: 'image', src: 'assets/works/creative-subway.jpg', alt: 'Street fashion portrait beside a London Underground train' },
-        { kicker: '03 / composition', title: 'City angle', description: 'A composition study in perspective, flash and controlled distance.', meta: ['personal work', 'composition'], type: 'image', src: 'assets/works/creative-street-angle.jpg', alt: 'Fashion portrait photographed from an elevated street angle' }
+        { layout: 'source', kicker: '01 / source & direction', title: 'Source & direction', description: 'Official brand and product references are combined with AI-assisted visuals I created from the scent, texture and color cues.', meta: ['Sol de Janeiro', 'visual direction'], type: 'campaignGrid', items: [
+          { src: 'assets/works/sdj-product-source.webp', label: 'product source', fit: 'contain', position: '50% 50%', alt: 'Official Sol de Janeiro Cheirosa 62 product source image on white background' },
+          { src: 'assets/works/sdj-brand-reference.webp', label: 'brand source', fit: 'cover', position: '50% 50%', alt: 'Official Sol de Janeiro Cheirosa 62 beach brand source image' },
+          { src: 'assets/works/sdj-scent-reference.webp', label: 'scent / visual cue', fit: 'cover', position: '50% 50%', alt: 'Sol de Janeiro Cheirosa 62 pistachio salted caramel vanilla visual cue' },
+          { src: 'assets/works/sdj-texture-reference.png', label: 'generated texture study', fit: 'cover', position: '50% 42%', alt: 'AI-assisted honey and pistachio texture study' }
+        ] },
+        { layout: 'scenes', kicker: '02 / scene development', title: 'Scene development', description: 'I developed four product-led scenes from the brand’s visual cues, keeping the product recognizable while changing setting, texture, light and composition.', meta: ['product placement', 'image direction'], type: 'campaignGrid', items: [
+          { src: 'assets/works/sdj-scene-beach.webp', label: 'beach', fit: 'cover', position: '50% 50%', alt: 'Sol de Janeiro Cheirosa 62 product placed in a beach scene' },
+          { src: 'assets/works/product-motion-poster.jpg', label: 'product close-up', fit: 'cover', position: '50% 50%', alt: 'Sol de Janeiro Cheirosa 62 product close-up scene' },
+          { src: 'assets/works/sdj-scene-studio.webp', label: 'studio', fit: 'cover', position: '50% 50%', alt: 'Sol de Janeiro Cheirosa 62 product placed in a clean studio scene' },
+          { src: 'assets/works/sdj-scene-golden-texture.webp', label: 'golden texture', fit: 'cover', position: '50% 50%', alt: 'Golden texture visual study for Sol de Janeiro Cheirosa 62' }
+        ] },
+        { layout: 'film', kicker: '03 / motion', title: 'From stills to film', description: 'I animated the selected stills with AI-assisted motion tools, then edited the clips into one vertical product film.', meta: ['AI-assisted motion', 'video editing'], type: 'video', src: 'assets/works/product-motion.mp4', poster: 'assets/works/product-motion-poster.jpg', fit: 'contain', position: '50% 50%', preload: 'metadata', label: 'Final Sol de Janeiro Cheirosa 62 vertical product motion video' }
       ]
     }
   ];
